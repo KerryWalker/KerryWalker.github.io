@@ -8,9 +8,9 @@
 
 /* Timeline */
 .timeline-FA,
-.timeline-samuel-02,
-.timeline-samuel-03,
-.timeline-samuel-04 {
+.timeline-PV,
+.timeline-Remsdaq,
+.timeline-TS {
   -moz-transition: all .5s ease-in-out;
   -webkit-transition: all .5s ease-in-out;
   transition: all .5s ease-in-out; }
@@ -18,21 +18,27 @@
 .timeline-FA {
   background: url("../../images/FA-Black-Logo.svg");
   background-position: center;
-  background-size: cover; }
+  background-size: contain;
+background-repeat: no-repeat;}
 
-.timeline-samuel-02 {
-  background: url("../../images/layouts/samuel/timeline/02.jpg");
+.timeline-PV {
+  background: url("../../images/PV-white-logo.svg");
+  background-color: #3C4957;
   background-position: center;
-  background-size: cover; }
+  background-size: contain;
+background-repeat: no-repeat;}
 
-.timeline-samuel-03 {
-  background: url("../../images/layouts/samuel/timeline/03.jpg");
+.timeline-Remsdaq {
+  background: url("../../images/remsdaq-logo.jpg");
   background-position: center;
-  background-size: cover; }
+  background-size: contain;
+background-repeat: no-repeat;}
 
-.timeline-samuel-04 {
-  background: url("../../images/layouts/samuel/timeline/04.jpg");
+.timeline-TS {
+  background: url("../../images/trianglesoftwarelogo.jpg");
   background-position: center;
-  background-size: cover; }
+  background-size: contain;
+  background-repeat: no-repeat;}
+}
 
 /*# sourceMappingURL=samuel.css.map */
