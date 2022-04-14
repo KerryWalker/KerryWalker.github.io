@@ -7,7 +7,7 @@
   min-height: 360px; }
 
 /* Timeline */
-.timeline-samuel-01,
+.timeline-FA,
 .timeline-samuel-02,
 .timeline-samuel-03,
 .timeline-samuel-04 {
@@ -15,8 +15,8 @@
   -webkit-transition: all .5s ease-in-out;
   transition: all .5s ease-in-out; }
 
-.timeline-samuel-01 {
-  background: url("../../images/layouts/samuel/timeline/01.jpg");
+.timeline-FA {
+  background: url("../../images/FA-Black-Logo.svg");
   background-position: center;
   background-size: cover; }
 
