@@ -1,3 +1,5 @@
+Another attempt at a personal blog, this time hosted on GitHub using [hydeout](https://github.com/fongandrew/hydeout)
+
 # Hydeout
 
 Hydeout updates the original [Hyde](https://github.com/poole/hyde)
