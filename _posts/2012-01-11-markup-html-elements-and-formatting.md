@@ -11,7 +11,6 @@ elements:
   - html
   - markup
 last_modified_at: 2017-03-09T10:55:59-05:00
-published: false
 ---
 
 A variety of common HTML elements to demonstrate the theme's stylesheet and verify they have been styled appropriately.

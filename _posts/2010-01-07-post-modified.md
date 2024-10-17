@@ -8,7 +8,6 @@ tags:
   - readability
   - standard
 last_modified_at: 2017-03-09T13:01:27-05:00
-published: false
 ---
 
 This post has been updated and should show a modified date if `last_modified_at` is used in the layout.
