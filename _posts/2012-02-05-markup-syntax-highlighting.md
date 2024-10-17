@@ -1,4 +1,5 @@
 ---
+published: false
 title: "Markup: Syntax Highlighting"
 layout: post
 excerpt: "Post displaying the various ways one can highlight code blocks with Jekyll. Some options include standard Markdown, GitHub Flavored Markdown, and Jekyll's `{% highlight %}` tag."
