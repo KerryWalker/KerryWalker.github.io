@@ -2,13 +2,13 @@
 layout: post
 title: Move a Git local commit to a new branch
 tags:
-  - Git
+  - git
 ---
 
 I often work in the main branch and then create a new branch when I'm ready to commit changes, I find this easier than creating a new branch when I start something but then needing to rebase my branch when I'm ready to commit.
 Unfortunatly this means I sometimes commit changes to the wrong branch.
 
-{% highlight js %}
+{% highlight console %}
 git branch new-branch-name
 git switch new-branch-name
 git branch --force development origin/development
