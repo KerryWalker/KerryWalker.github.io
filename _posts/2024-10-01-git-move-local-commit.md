@@ -1,8 +1,6 @@
 ---
 layout: post
 title: Move a Git local commit to a new branch
-tags:
-  - Git
 ---
 
 I often work in the main branch and then create a new branch when I'm ready to commit changes, I find this easier than creating a new branch when I start something but then needing to rebase my branch when I'm ready to commit.
