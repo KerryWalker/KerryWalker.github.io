@@ -1,5 +1,10 @@
 ---
 layout: post
-title: Growatt, Predbatt & Home Assistant
+title: Growatt, Predbat & Home Assistant
 excerpt_separator:  <!--more-->
+tags:
+  - Growatt
+  - Predbat
+  - Home Assistant
+
 ---
