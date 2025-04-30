@@ -1,6 +1,6 @@
 ---
 layout: post
-published: false
+published: true
 title: Move a Git local commit to a new branch
 tags:
   - git
