@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Git partial stash
-published: false
+published: true
 tags:
   - git
 ---
