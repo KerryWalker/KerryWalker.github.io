@@ -7,7 +7,6 @@ tags:
   - Aspnetcore
 ---
 
-## Handling Different Payload Types in ASP.NET Core with a Custom Input Formatter
 
 In modern APIs, especially integrations with third-party platforms, it's common to receive JSON payloads where a field like `"command"` determines the structure of the `"record"` or `"data"` part of the payload.
 
