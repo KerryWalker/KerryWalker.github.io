@@ -1,14 +1,15 @@
-# 🔄 Handling Different Payload Types in ASP.NET Core with a Custom Input Formatter
+## Handling Different Payload Types in ASP.NET Core with a Custom Input Formatter
 
 In modern APIs, especially integrations with third-party platforms, it's common to receive JSON payloads where a field like `"command"` determines the structure of the `"record"` or `"data"` part of the payload.
 
-In this post, I'll show how I **built a custom input formatter** in ASP.NET Core that reads a discriminator field (like `"command"`) and deserializes the request into different .NET types accordingly.
+There are a few common options for handling this, one of which uses ASP.NET Core [custom input formatters](https://docs.microsoft.com/en-us/aspnet/core/web-api/advanced/custom-formatters).
+In this post, I'll show how I built a custom input formatter in ASP.NET Core that reads a discriminator field (like `"command"`) and deserializes the request into different .NET types accordingly.
 
 ---
 
-## 📦 Example Scenario
+### Example Scenario
 
-You receive POST requests with this structure:
+I receive POST requests with a structure similar to this:
 
 ```json
 {
@@ -24,7 +25,7 @@ You receive POST requests with this structure:
 }
 ```
 
-The shape of `"attributes"` depends on the `"command"`. You want to deserialize into different C# classes like:
+The shape of `"attributes"` depends on the `"command"`. I wanted to deserialize the `"attributes"` into different C# classes like:
 
 ```csharp
 public class OpenObjectPayload
@@ -42,11 +43,11 @@ public class CloseObjectPayload
 
 ---
 
-## ✅ Solution: Custom Input Formatter
+### Solution: Custom Input Formatter
 
-ASP.NET Core supports [custom input formatters](https://docs.microsoft.com/en-us/aspnet/core/web-api/advanced/custom-formatters). I'll used this to inspect the incoming JSON and route it to the correct class.
+ I used this to inspect the incoming JSON and route it to the correct class.
 
-### 1. Create a Base Class
+#### 1. Create a Base Class
 
 ```csharp
 public abstract class WebhookRequest
@@ -55,7 +56,7 @@ public abstract class WebhookRequest
 }
 ```
 
-### 2. Define Derived Payload Classes
+#### 2. Define Derived Payload Classes
 
 ```csharp
 public class OpenObjectRequest : WebhookRequest
@@ -69,7 +70,8 @@ public class CloseObjectRequest : WebhookRequest
 }
 ```
 
-### 3. Create the Custom Input Formatter
+#### 3. Create the Custom Input Formatter
+
 
 ```csharp
 public class CommandBasedInputFormatter : TextInputFormatter
@@ -116,7 +118,7 @@ public class CommandBasedInputFormatter : TextInputFormatter
 
 ---
 
-## 🔧 Register the Formatter
+#### Register the Formatter
 
 In `Startup.cs` (for .NET Core 3.1) or `Program.cs` (for .NET 6+):
 
@@ -129,7 +131,7 @@ services.AddControllers(options =>
 
 ---
 
-## 🧪 Use in Controller
+###  Use in Controller
 
 ```csharp
 [HttpPost("webhook")]
@@ -153,14 +155,14 @@ public IActionResult HandleWebhook([FromBody] WebhookRequest request)
 
 ---
 
-## 🚀 Benefits
+### Benefits
 
-✅ Centralised logic for routing based on discriminator fields  
-✅ Strongly typed models per command  
-✅ Compatible with `application/json` and standard model binding  
+Centralised logic for routing based on discriminator fields  
+Strongly typed models per command  
+Compatible with `application/json` and standard model binding  
 
 ---
 
-## 🔚 Conclusion
+### Conclusion
 
 Using a custom input formatter in ASP.NET Core is a clean and powerful way to handle polymorphic request bodies driven by a `command` or `type` field. This approach keeps the controller actions strongly typed and easier to maintain.
