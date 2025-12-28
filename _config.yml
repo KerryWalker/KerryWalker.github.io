@@ -6,6 +6,7 @@ title:            Kerry Walker
 tagline:          'Random Stuff'
 description:      'Software Engineer, Forgetful Blogger, Lucky Husband, Proud Father'
 url:              https://www.kerrywalker.uk
+include: [".well-known"]
 baseurl:          '/'
                   # the optional subpath of your site, e.g. "/blog"
                   # NB: This applies to all pages in your Jekyll site.
