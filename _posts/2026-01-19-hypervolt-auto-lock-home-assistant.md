@@ -1,6 +1,7 @@
 ---
 layout: post
-title: Auto-locking a Hypervolt EV Charger with Home Assistant and Tesla
+title: Hypervolt Auto Lock/Unlock Automation with Home Assistant and Tesla
+excerpt: How to automatically lock and unlock a Hypervolt EV charger using Home Assistant automations when a Tesla plugs in or unplugs.
 tags:
   - home-assistant
   - hypervolt
@@ -48,7 +49,7 @@ I had to accept that reliable location tracking wasn't going to happen without c
 The compromise was to drop location entirely and rely on what I *could* trust - the physical connection. If my Hypervolt (which is fixed at my house) detects a car plugged in, AND my Tesla confirms its cable is connected, then it must be my Tesla at my house. The Hypervolt itself becomes the location check. It's not as elegant as "Tesla arrives home, charger unlocks", but it's bulletproof.
 
 
-## The Final Solution
+## The Final Automation
 
 Two sensors, no GPS:
 
