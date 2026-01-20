@@ -1,0 +1,102 @@
+/*! 
+ * Custom Giscus theme for kerrywalker.uk
+ * Matches Hydeout theme with #90a959 green accent
+ * Save as: assets/css/giscus-theme.css
+ */
+
+main {
+  --color-canvas-default: #fff;
+  --color-canvas-overlay: #fff;
+  --color-canvas-inset: #f6f8fa;
+  --color-canvas-subtle: #f6f8fa;
+
+  --color-border-default: #d0d7de;
+  --color-border-muted: #d8dee4;
+  --color-border-subtle: rgba(27, 31, 36, 0.15);
+
+  /* Neutral text colours */
+  --color-fg-default: #1f2328;
+  --color-fg-muted: #656d76;
+  --color-fg-subtle: #6e7781;
+
+  /* Link colour - matches your $link-color: #90a959 */
+  --color-accent-fg: #90a959;
+  --color-accent-emphasis: #90a959;
+  --color-accent-muted: rgba(144, 169, 89, 0.4);
+  --color-accent-subtle: rgba(144, 169, 89, 0.1);
+
+  /* Button styles */
+  --color-btn-text: #24292f;
+  --color-btn-bg: #f6f8fa;
+  --color-btn-border: rgba(27, 31, 36, 0.15);
+  --color-btn-shadow: 0 1px 0 rgba(27, 31, 36, 0.04);
+  --color-btn-inset-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.25);
+  --color-btn-hover-bg: #f3f4f6;
+  --color-btn-hover-border: rgba(27, 31, 36, 0.15);
+
+  /* Primary button - uses your green accent */
+  --color-btn-primary-text: #fff;
+  --color-btn-primary-bg: #90a959;
+  --color-btn-primary-border: #90a959;
+  --color-btn-primary-shadow: 0 1px 0 rgba(27, 31, 36, 0.1);
+  --color-btn-primary-inset-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.03);
+  --color-btn-primary-hover-bg: #7d9a4a;
+  --color-btn-primary-hover-border: #7d9a4a;
+  --color-btn-primary-selected-bg: #6e8a3d;
+  --color-btn-primary-disabled-text: rgba(255, 255, 255, 0.5);
+  --color-btn-primary-disabled-bg: rgba(144, 169, 89, 0.6);
+  --color-btn-primary-disabled-border: transparent;
+
+  /* Form elements */
+  --color-fg-on-emphasis: #fff;
+  --color-neutral-muted: rgba(175, 184, 193, 0.2);
+  --color-neutral-subtle: rgba(234, 238, 242, 0.5);
+
+  /* Reactions */
+  --color-social-reaction-bg-hover: #eaeef2;
+  --color-social-reaction-bg-reacted-hover: rgba(38, 139, 210, 0.2);
+}
+
+/* Style the main comment box */
+.gsc-comment-box {
+  border-radius: 6px;
+}
+
+/* Style comment cards */
+.gsc-comment {
+  border-radius: 6px;
+}
+
+/* Timeline connector */
+.gsc-timeline {
+  border-left-color: #d0d7de;
+}
+
+/* Textarea focus state */
+.gsc-comment-box-textarea:focus {
+  border-color: #90a959;
+  box-shadow: 0 0 0 3px rgba(144, 169, 89, 0.2);
+}
+
+/* Header area */
+.gsc-header {
+  padding-bottom: 1rem;
+}
+
+/* Reaction buttons */
+.gsc-reactions-button {
+  border-radius: 20px;
+}
+
+.gsc-reactions-button:hover {
+  background-color: rgba(144, 169, 89, 0.1);
+}
+
+/* Login link styling */
+.gsc-login-link {
+  color: #90a959;
+}
+
+.gsc-login-link:hover {
+  text-decoration: underline;
+}
