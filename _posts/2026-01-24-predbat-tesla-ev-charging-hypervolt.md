@@ -16,9 +16,10 @@ Following on from my Predbat battery configuration, this post covers adding EV c
 
 - Tesla Model Y 2025 Standard Range (~60kWh usable battery)
 - Hypervolt EV charger (32A single phase, ~7.4kW)
-- Tesla Fleet integration in Home Assistant
-- Hypervolt charger integration in Home Assistant
-- Predbat already configured for battery optimisation
+- [Tesla Fleet integration](https://www.home-assistant.io/integrations/tesla_fleet/) in Home Assistant
+- [Hypervolt charger integration](https://github.com/gndean/home-assistant-hypervolt-charger) in Home Assistant
+- [Predbat](https://springfall2008.github.io/batpred/) already configured for battery optimisation
+
 
 ## The Approach: Predbat-Led Charging
 

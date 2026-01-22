@@ -16,8 +16,8 @@ I've been running a Growatt SPH inverter with two GBLI 6.5kWh batteries (13kWh t
 
 - Growatt SPH hybrid inverter
 - 2× GBLI 6.5kWh batteries (13kWh total)
-- Solar Assistant (for Modbus communication with the inverter)
-- Home Assistant with Predbat via AppDaemon
+- [Solar Assistant](https://solar-assistant.io/) (for Modbus communication with the inverter)
+- Home Assistant with [Predbat](https://springfall2008.github.io/batpred/)
 
 ## Why Predbat?
 
@@ -301,10 +301,6 @@ Beyond the `apps.yaml` file, Predbat exposes many settings as Home Assistant ent
 | `switch.predbat_inverter_hybrid` | ON | Correct for Growatt SPH |
 | `switch.predbat_metric_pv_calibration_enable` | ON | Improves solar predictions over time |
 | `switch.predbat_set_export_freeze` | ON | Holds SoC during high export rate periods |
-
-### Understanding `switch.predbat_active`
-
-This confused me initially - `switch.predbat_active` is a **status indicator**, not a control. It shows ON when Predbat is actively executing a charge/discharge plan (i.e., you're within a scheduled charging window). You don't turn it on manually; it turns on automatically when Predbat is controlling the inverter.
 
 ## Verifying the Configuration
 
