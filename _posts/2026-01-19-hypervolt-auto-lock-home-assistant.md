@@ -24,7 +24,7 @@ My initial approach seemed logical: use the Tesla's location to detect when it's
 
 Simple enough, right? Except it didn't work reliably.
 
-### Why Tesla Location Tracking Is Unreliable
+## Why Tesla Location Tracking Doesn't Work
 
 The problem is that Teslas sleep aggressively to conserve battery. When asleep, the Tesla Fleet API can't get live data, so the location sensor shows stale information or simply "unknown". I'd pull into my driveway, plug in, and... nothing. The Tesla was still reporting "not_home" because it hadn't woken up to update its location yet.
 
@@ -47,7 +47,6 @@ This checks if the Tesla is within 0.5km of home, which is more tolerant of GPS 
 I had to accept that reliable location tracking wasn't going to happen without constantly waking the car, which defeats the purpose of letting it sleep. The trade-off became clear: I could either have accurate location data and a car that drains its battery polling for updates, or I could find another way.
 
 The compromise was to drop location entirely and rely on what I *could* trust - the physical connection. If my Hypervolt (which is fixed at my house) detects a car plugged in, AND my Tesla confirms its cable is connected, then it must be my Tesla at my house. The Hypervolt itself becomes the location check. It's not as elegant as "Tesla arrives home, charger unlocks", but it's bulletproof.
-
 
 ## The Final Automation
 
@@ -91,50 +90,43 @@ The automation triggers when either sensor turns on, but only fires if both cond
 
 I initially had it only trigger on the Hypervolt sensor, with the Tesla cable as a condition. But the timing was inconsistent - sometimes the Hypervolt would report first, sometimes the Tesla would. Triggering on both and checking both as conditions made it much more reliable.
 
-### Lock When Tesla Unplugs
+### Lock When Any Car Unplugs
 
 ```yaml
-alias: "Hypervolt Lock - Tesla Unplugged"
-description: "Lock Hypervolt when Tesla unplugs"
+alias: "Hypervolt Lock - Car Unplugged"
+description: "Lock Hypervolt when any car unplugs"
 mode: single
 
 triggers:
   - trigger: state
     entity_id: binary_sensor.hypervolt_car_plugged
     to: "off"
-  - trigger: state
-    entity_id: binary_sensor.kerrys_tesla_charge_cable
-    to: "off"
 
-conditions:
+conditions: []
+
+actions:
+  - delay:
+      seconds: 10
   - condition: state
     entity_id: binary_sensor.hypervolt_car_plugged
     state: "off"
-  - condition: state
-    entity_id: binary_sensor.kerrys_tesla_charge_cable
-    state: "off"
-
-actions:
   - action: switch.turn_on
     target:
       entity_id: switch.hypervolt_lock_state
 ```
 
-Same logic in reverse - lock when both sensors show disconnected.
+The lock automation is simpler - we don't need to check the Tesla at all. If anything unplugs from the Hypervolt, lock it. The 10-second delay with a re-check prevents locking during momentary disconnects (like if the cable gets bumped).
 
 ## Why This Works
 
-The dual-sensor approach handles several edge cases nicely:
+The unlock automation requires BOTH sensors to confirm it's your Tesla at your charger. The lock automation is simpler - just lock whenever anything unplugs from the Hypervolt.
 
 | Scenario | Hypervolt | Tesla Cable | Result |
 |----------|-----------|-------------|--------|
 | Tesla plugs into Hypervolt | on | on | Unlocks ✓ |
-| Tesla unplugs from Hypervolt | off | off | Locks ✓ |
+| Any car unplugs from Hypervolt | off | - | Locks ✓ |
 | Tesla unplugs at public charger | unchanged | off | Nothing ✓ |
-| Random car plugs into Hypervolt | on | off | Nothing ✓ |
-| Random car unplugs from Hypervolt | off | off | Locks ✓ |
-
-The last case is actually fine - if a random car was using the charger (which I'd have manually unlocked), it locks again when they finish.
+| Random car plugs into Hypervolt | on | off | Nothing (stays locked) ✓ |
 
 ## Guest Charging
 
@@ -144,8 +136,8 @@ If I want to let someone else use the charger, I just manually unlock it. When t
 
 1. **Don't trust Tesla location data** - the car sleeps too aggressively for real-time location tracking to be reliable
 2. **Physical sensors beat GPS** - the Hypervolt knowing a car is plugged in is more reliable than GPS coordinates
-3. **Trigger on multiple sensors** - when two things need to happen, trigger on both and use conditions to ensure both are true
-4. **Simple is better** - removing the location check made the automation both simpler and more reliable
+3. **Keep lock logic simple** - unlocking needs to verify it's your car, but locking can just happen whenever anything unplugs
+4. **Trigger on multiple sensors for unlock** - when two things need to happen, trigger on both and use conditions to ensure both are true
 
 ## Prerequisites
 
