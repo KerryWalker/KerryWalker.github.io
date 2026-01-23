@@ -250,6 +250,6 @@ Set this to your desired charge level in the Tesla app or via Home Assistant bef
 
 ## Results
 
-With this setup, I plug in when I get home and forget about it. Predbat identifies the cheapest overnight slots (typically 1am-5am on Agile) and charges the car automatically. The car is ready at my specified time, charged at a fraction of peak electricity costs.
+With this setup, I plug in when I get home and forget about it. Predbat identifies the cheapest slots and charges the car automatically. The car is ready at my specified time, charged at a fraction of peak electricity costs.
 
 The combination of battery storage and EV charging optimisation means I'm using grid power almost exclusively during the cheapest periods, with solar and battery covering peak times.
