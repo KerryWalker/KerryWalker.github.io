@@ -215,9 +215,16 @@ pred_bat:
 
   octopus_intelligent_slot: "off"
 
-  # Forecast 30 hours for Agile
-  # Agile prices are released at ~16:30 for 23:00 that day through 23:00 next day
-  # This gives ~30 hours of known prices - no point planning beyond that
+  # ===========================================
+  # FORECAST SETTINGS
+  # ===========================================
+  # forecast_hours: how far ahead Predbat models solar/load predictions
+  # Keep at 48 for good solar and load forecasting
+  forecast_hours: 48
+
+  # forecast_plan_hours: how far ahead Predbat plans charging slots
+  # Set to 30 for Agile - prices are released at ~16:30 for 23:00 that day
+  # through 23:00 next day, giving ~30 hours of known prices
   forecast_plan_hours: 30
 
   # ===========================================
@@ -240,9 +247,14 @@ pred_bat:
 
 This caught me out initially. Predbat expects grid power to be negative when importing and positive when exporting. My Growatt via Solar Assistant reports it the opposite way (positive = importing), so `grid_power_invert: True` is essential. Check your own sensor in Developer Tools → States while the grid is importing to see which way yours reports.
 
-### Forecast Hours
+### Forecast Hours vs Forecast Plan Hours
 
-I've set `forecast_plan_hours: 30` to match how Agile prices are published. Octopus releases Agile prices at around 16:30 each day, covering 23:00 that evening through to 23:00 the following day. This gives you roughly 30 hours of known prices at any time. Setting it higher (like 48) would have Predbat planning with estimated prices for the extra hours, which is less accurate.
+These are two different settings that confused me initially:
+
+- **`forecast_hours: 48`** - How far ahead Predbat models your solar production and household load. Keep this at 48 hours for accurate predictions.
+- **`forecast_plan_hours: 30`** - How far ahead Predbat actively plans charging slots. This should match your known price window.
+
+For Agile, prices are released around 16:30 each day, covering 23:00 that evening through to 23:00 the following day - roughly 30 hours of known prices. Setting `forecast_plan_hours` higher would have Predbat planning with estimated prices, which is less accurate. But you still want the full 48-hour forecast for solar and load modelling.
 
 ### Historical Weighting
 
