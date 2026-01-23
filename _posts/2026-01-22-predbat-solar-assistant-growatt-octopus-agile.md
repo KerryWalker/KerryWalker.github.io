@@ -215,8 +215,10 @@ pred_bat:
 
   octopus_intelligent_slot: "off"
 
-  # Forecast 48 hours for Agile (prices change frequently)
-  forecast_plan_hours: 48
+  # Forecast 30 hours for Agile
+  # Agile prices are released at ~16:30 for 23:00 that day through 23:00 next day
+  # This gives ~30 hours of known prices - no point planning beyond that
+  forecast_plan_hours: 30
 
   # ===========================================
   # SOLCAST
@@ -240,7 +242,7 @@ This caught me out initially. Predbat expects grid power to be negative when imp
 
 ### Forecast Hours
 
-I've set `forecast_plan_hours: 48` because Agile prices are published day-ahead. With 48 hours of planning horizon, Predbat can optimise across two days of known prices.
+I've set `forecast_plan_hours: 30` to match how Agile prices are published. Octopus releases Agile prices at around 16:30 each day, covering 23:00 that evening through to 23:00 the following day. This gives you roughly 30 hours of known prices at any time. Setting it higher (like 48) would have Predbat planning with estimated prices for the extra hours, which is less accurate.
 
 ### Historical Weighting
 
@@ -281,7 +283,7 @@ Beyond the `apps.yaml` file, Predbat exposes many settings as Home Assistant ent
 
 | Setting | Value | Reason |
 |---------|-------|--------|
-| `input_number.predbat_forecast_plan_hours` | 48 | Two days of planning for day-ahead Agile prices |
+| `input_number.predbat_forecast_plan_hours` | 30 | Matches Agile price availability (~30 hours ahead) |
 | `switch.predbat_combine_charge_slots` | ON | Combines consecutive cheap slots into one charge window |
 | `switch.predbat_combine_export_slots` | ON | Same for export (when enabled) |
 | `switch.predbat_calculate_inday_adjustment` | ON | Adjusts plan as Agile prices update |
