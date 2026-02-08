@@ -1,6 +1,7 @@
 ---
 layout: page
-title: Yoto Player Referral
+title: Yoto Player Referral Code
+excerpt: Use my Yoto referral link to save on your first Yoto Player or Yoto Mini. Plus an honest comparison of the two players to help you decide.
 ---
 
 If you're thinking about getting a Yoto player, here's my referral link to save on your first order:

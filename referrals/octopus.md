@@ -1,6 +1,7 @@
 ---
 layout: page
-title: Octopus Energy Referral
+title: Octopus Energy Referral Code
+excerpt: Switch to Octopus Energy using my referral link for £50 free account credit, plus an extra £25 from me. That's £75 total for switching.
 ---
 
 I'm an Octopus Energy customer and I'd like to share my referral link with you. If you switch using the link below, you'll get **£50 free credit** on your Octopus account from their referral scheme. On top of that, I'll send you an extra **£25** from my share of the reward - making it **£75 in total**.
