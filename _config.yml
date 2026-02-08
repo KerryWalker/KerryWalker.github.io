@@ -28,7 +28,7 @@ plugins:
   - jekyll-paginate
   - jekyll-sitemap
 
-google_analytics: G-5MYC3DL2XD
+google_analytics: G-5MYC3DL2X
 # Sidebar link settings
 sidebar_home_link:  true
 # sidebar_blog_link:  '/blog'   # By default, your home page is your blog
