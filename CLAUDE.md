@@ -44,6 +44,10 @@ Content in Markdown...
 - **Comments**: Giscus (GitHub Discussions-based) configured in `_includes/comments.html`
 - **Analytics**: GA4 in `_includes/google-analytics.html` (production only)
 
+## Git Conventions
+
+- Do not add Co-Authored-By lines to commit messages.
+
 ## Customization Hooks
 
 The theme provides empty includes for customization without modifying theme files:
