@@ -40,7 +40,7 @@ Keep the crops tight with minimal background. If Spotify's background changes (d
 
 ## The Script
 
-```ahk
+```
 #Requires AutoHotkey v2.0
 
 ^!d:: {
