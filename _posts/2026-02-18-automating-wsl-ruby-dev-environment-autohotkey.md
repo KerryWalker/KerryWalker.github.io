@@ -1,22 +1,23 @@
 ---
 layout: post
 title: Automating a WSL Ruby Dev Environment with AutoHotKey
-excerpt: How I automated opening three Ubuntu terminal sessions, running the right commands in each, and launching a browser — all with a single keyboard shortcut.
+excerpt: How I automated opening four Ubuntu terminal sessions, running the right commands in each, opening VS Code, and launching a browser — all with a single keyboard shortcut.
 tags:
   - autohotkey
   - wsl
   - ruby
 ---
 
-I've started working on a Ruby project that runs in WSL. Every time I want to spin up the dev environment I need to open three separate Ubuntu terminal sessions, navigate to the project directory in each, run a different command in each one, then open a browser. It's not complicated but it's tedious to do multiple times a day.
+I've started working on a Ruby project that runs in WSL. Every time I want to spin up the dev environment I need to open four separate Ubuntu terminal sessions, navigate to the project directory in each, run a different command in each one, then open a browser. It's not complicated but it's tedious to do multiple times a day.
 
 ## What Needs to Happen
 
-Three Ubuntu tabs in Windows Terminal, all in the same project directory, each running a different process:
+Four Ubuntu tabs in Windows Terminal, all in the same project directory, each running a different process:
 
 1. `bin/sidekiq` — background job processor
 2. `bin/rails server` — the web app server
 3. `foreman start -f Procfile.dev` — runs additional processes like CSS/JS bundling
+4. `code .` — opens VS Code in the project directory
 
 Then open `http://localhost:3000` in a browser.
 
@@ -25,10 +26,10 @@ Then open `http://localhost:3000` in a browser.
 Windows Terminal supports a `-p` flag to specify a profile, and you can chain multiple tabs with `new-tab`. In AutoHotKey v2, semicolons need escaping with a backtick since AHK treats them as comments:
 
 ```
-Run "wt.exe -p Ubuntu `; new-tab -p Ubuntu `; new-tab -p Ubuntu"
+Run "wt.exe -p Ubuntu `; new-tab -p Ubuntu `; new-tab -p Ubuntu `; new-tab -p Ubuntu"
 ```
 
-This opens a single Windows Terminal window with three Ubuntu tabs.
+This opens a single Windows Terminal window with four Ubuntu tabs.
 
 ## The Full Script
 
@@ -36,9 +37,12 @@ This opens a single Windows Terminal window with three Ubuntu tabs.
 #Requires AutoHotkey v2.0
 
 ^!w:: {
-    ; Open 3 Ubuntu tabs in one Windows Terminal window
-    Run "wt.exe -p Ubuntu `; new-tab -p Ubuntu `; new-tab -p Ubuntu"
-    Sleep 2000
+    ; Open 4 Ubuntu tabs in one Windows Terminal window
+    Run "wt.exe -p Ubuntu `; new-tab -p Ubuntu `; new-tab -p Ubuntu `; new-tab -p Ubuntu"
+    ; Wait until Windows Terminal is actually ready, timeout after 5 seconds
+    WinWaitActive "ahk_exe WindowsTerminal.exe",, 5
+    Sleep 500  ; small extra buffer for tabs to settle
+
 
     ; Tab 1 (already focused) — sidekiq
     SendText "cd ~/projects/myapp && bin/sidekiq"
@@ -56,6 +60,13 @@ This opens a single Windows Terminal window with three Ubuntu tabs.
     Send "^{Tab}"
     Sleep 300
     SendText "cd ~/projects/myapp && foreman start -f Procfile.dev"
+    Send "{Enter}"
+
+    ; Switch to tab 4
+    Sleep 500
+    Send "^{Tab}"
+    Sleep 300
+    SendText "cd ~/projects/myapp && code ."
     Send "{Enter}"
 
     ; Open the app in the browser
@@ -78,4 +89,4 @@ I've got this mapped to a macro on my Keychron V6 Max so I can start the whole e
 
 ## Result
 
-One key press and I'm ready to code. The three terminals spin up, the processes start, and the browser opens to the app. It's saved me a surprising amount of friction throughout the day.
+One key press and I'm ready to code. The four terminals spin up, the processes start, VS Code opens, and the browser loads the app. It's saved me a surprising amount of friction throughout the day.
