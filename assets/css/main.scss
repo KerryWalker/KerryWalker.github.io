@@ -8,3 +8,12 @@ $link-color: #90a959;
 $sidebar-bg-color: #90a959;
 $heading-color: #90a959;
 @import "hydeout";
+
+// Smaller related posts
+.related h2 {
+  font-size: 1.2rem;
+}
+.related .posts-list h3 {
+  font-size: 0.9rem;
+  margin: 0.5rem 0;
+}
