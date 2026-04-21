@@ -82,7 +82,7 @@ That's a real reduction. But in practice, the 42T front ring was only useful at 
 
 ## What I ended up buying
 
-Once the decisions were made, the shopping was straightforward. I went with Shimano Deore-level components - a [Shimano RD-M5120 rear derailleur](https://ebay.us/vZ4djd) (the Shadow+ version with a clutch to reduce chain slap), the [CS-M4100 10-speed 11-42T cassette](https://ebay.us/Lrmi5r), an [SL-M4100 shifter](https://ebay.us/U2XGyD), and a [CN-HG95 chain](https://ebay.us/sHjqfW). For the chainring I found a [Bucklos 34T narrow-wide](https://ebay.us/pXW8gT) that fits the 104 BCD bolt pattern on my existing cranks. I also needed shorter chainring bolts - 6.5mm single-ring length rather than the longer ones from the triple chainset.
+Once the decisions were made, I shopped around all the usual cycle and sports shops but in the end eBay had the best prices for everything. Fingers crossed it's all genuine. I went with Shimano Deore-level components - a [Shimano RD-M5120 rear derailleur](https://ebay.us/vZ4djd) (the Shadow+ version with a clutch to reduce chain slap), the [CS-M4100 10-speed 11-42T cassette](https://ebay.us/Lrmi5r), an [SL-M4100 shifter](https://ebay.us/U2XGyD), and a [CN-HG95 chain](https://ebay.us/sHjqfW). For the chainring I found a [Bucklos 34T narrow-wide](https://ebay.us/pXW8gT) that fits the 104 BCD bolt pattern on my existing cranks. I also needed shorter chainring bolts - 6.5mm single-ring length rather than the longer ones from the triple chainset.
 
 Total cost came in just under £130 delivered.
 
