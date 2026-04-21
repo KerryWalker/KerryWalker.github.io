@@ -2,6 +2,7 @@
 layout: post
 title: "Cycling After Stroke: What I Found Out After a Bad Cramp"
 excerpt: After a short bike ride left me with a painful calf cramp, I went down a rabbit hole looking into why - and what might help.
+affiliate: true
 tags:
   - cycling
   - stroke
@@ -57,7 +58,7 @@ I rest my right hand on the handlebar. It's not doing any work, but my physio re
 
 I've found that bar height affects this. When the bars are lower, I end up leaning forward and putting weight through both arms whether I want to or not. More upright seems to keep the right arm more relaxed.
 
-I've also been looking at ergonomic grips like the Ergon GP1. They have a wider palm support section, which in theory means the hand can sit there without needing to actively grip. That matters for me because with post-stroke tone, gripping tends to increase spasticity - something my physio keeps reminding me about.
+I've also been looking at ergonomic grips like the [Ergon GP1](https://amzn.to/3OgitL5). They have a wider palm support section, which in theory means the hand can sit there without needing to actively grip. That matters for me because with post-stroke tone, gripping tends to increase spasticity - something my physio keeps reminding me about.
 
 ## What I'm going to try
 

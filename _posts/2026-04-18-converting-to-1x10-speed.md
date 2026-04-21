@@ -88,14 +88,12 @@ Total cost came in just under £130 delivered.
 
 ## One Thing Worth Knowing Before You Start
 
-Chain sizing for a 1x setup is apparently done differently to a multi-ring bike. From what I read, you route the chain through the rear derailleur normally, then bring both ends up and over the chainring and the largest rear sprocket - the 42T - without going through the derailleur cage at that point. Pull snug, add one complete link, break there.
+Chain sizing for a 1x setup is apparently done differently to a multi-ring bike. From what I read, you thread the chain through the rear derailleur as normal (through both jockey wheels), wrap it around the chainring and the largest rear sprocket - the 42T - then pull the chain taut. This extends the derailleur cage forward. Where the two ends of the chain meet, add two links (one full link) and break there.
 
-The reason for using the largest sprocket seems to be that you're sizing for the worst case combination, making sure the derailleur has enough chain without going slack on the smallest sprocket. I found a few good videos online that explained it more clearly than I could describe here.
+The reason for using the largest sprocket is that you're sizing for the worst case - the combination that needs the most chain. That way the derailleur has enough slack to take up when you shift to smaller sprockets.
 
-## Was It Worth It?
+## Will It Be Worth It?
 
-The front shifting is gone. There's one lever to think about, one thing to adjust, one less source of noise and cable stretch. It's noticeably simpler to ride.
+The front shifting will be gone. One lever to think about, one thing to adjust, one less source of noise and cable stretch. In theory it should be noticeably simpler to ride.
 
-The gear range is better where it matters - the climbing end. I haven't hit the limits of the 34T up front, and the 42T at the back has been useful on hills that were a struggle before.
-
-For a bike this age and value, spending £130 to make it work properly for how I actually use it felt like the right call. It's not a high-end build. But it does the job better than it did before.
+For a bike this age and value, spending £130 to make it work properly for how I actually use it feels like the right call. I'll update this once everything arrives and I've had a chance to fit it.

@@ -61,7 +61,7 @@ I never liked the idea of clipless pedals and wasn't sure my foot would stay cli
 
 Twenty years later, coming back to two wheels, that thermoplastic cage was long gone. I bought some to try and recreate it, but in the end the solution turned out to be simpler than all of that.
 
-I already had Five Ten bike shoes, which are known for their sticky rubber soles. All I needed was decent flat pedals with long pins. The pins grip the sole and the foot barely moves once it's placed. Getting my foot straight on the pedal is still a bit awkward, but once it's set it stays put. I went with [HT pedals](https://amzn.to/4sK8RX2) after reading far too many reviews.
+I already had [Five Ten bike shoes](https://amzn.to/4u18l87), which are known for their sticky rubber soles. All I needed was decent flat pedals with long pins. The pins grip the sole and the foot barely moves once it's placed. Getting my foot straight on the pedal is still a bit awkward, but once it's set it stays put. I went with [HT pedals](https://amzn.to/4sK8RX2) after reading far too many reviews.
 
 ## Steering damper
 
