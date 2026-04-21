@@ -2,6 +2,7 @@
 layout: post
 title: One-Key Spotify Connect with AutoHotKey and a Keychron Keyboard
 excerpt: How I set up a single keyboard shortcut to open Spotify's Connect panel and select a specific speaker using AutoHotKey and a Keychron V6 Max.
+affiliate: true
 tags:
   - autohotkey
   - spotify

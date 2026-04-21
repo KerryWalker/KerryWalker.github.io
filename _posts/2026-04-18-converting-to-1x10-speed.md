@@ -2,6 +2,7 @@
 layout: post
 title: Converting an Older MTB to 1x10 - The Decisions Nobody Tells You About
 excerpt: I wanted simpler shifting and a better gear range. What started as a straightforward upgrade turned into a surprisingly interesting set of decisions about gear ratios, chainring size, and whether 11 speed was even worth it.
+affiliate: true
 tags:
   - cycling
   - mtb

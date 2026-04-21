@@ -2,6 +2,7 @@
 layout: post
 title: Back on Two Wheels After Twenty Years on Three
 excerpt: After two decades on recumbent trikes, I needed something that could go on a bike rack. Here's how I got back on a mountain bike with one working arm.
+affiliate: true
 tags:
   - cycling
   - stroke

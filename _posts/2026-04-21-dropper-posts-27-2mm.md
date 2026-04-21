@@ -2,6 +2,7 @@
 layout: post
 title: Dropper Posts for Older Bikes - The 27.2mm Problem
 excerpt: Adding a dropper post to an older mountain bike sounds simple until you discover your seat tube is 27.2mm. Then the options get interesting.
+affiliate: true
 tags:
   - cycling
   - mtb
