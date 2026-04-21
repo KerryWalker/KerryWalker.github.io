@@ -1,6 +1,6 @@
 ---
 layout: post
-published: false
+published: true
 title: "Family Dashboard Part 1: iCloud Calendars in Home Assistant"
 excerpt: "Pulling four iCloud calendars into Home Assistant using CalDAV and displaying them with Atomic Calendar Revive."
 tags:
