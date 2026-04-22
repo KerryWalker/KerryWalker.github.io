@@ -8,7 +8,7 @@ sidebar_link: true
 
 I'm a software developer based in Cheshire, UK. I've been writing code professionally for over 18 years, mostly in the .NET ecosystem, though I'm currently picking up Ruby on Rails as part of my day job.
 
-I started off with Sinclair Spectrums, briefly the ZX81 then the good old rubber keys 48K as a child when it was too cold to go outside and do something more interesting. Before I got into software professionally, I spent over a decade as an electrical engineer, mostly at British Steel. That background still shapes how I approach problems - I think of debugging code the same way I used to trace faults in industrial control systems.
+As a child, when it was too cold to go outside and do something more interesting, I messed around with Sinclair Spectrums - briefly the ZX81, then the good old rubber keys 48K. Before I got into software professionally, I spent over a decade as an electrical engineer, mostly at British Steel. That background still shapes how I approach problems - I think of debugging code the same way I used to trace faults in industrial control systems.
 
 These days I lead a small team building software for the UK holiday park industry. I get particular satisfaction from making slow things fast - there's something deeply rewarding about taking a system that grinds to a halt and making it fly.
 
