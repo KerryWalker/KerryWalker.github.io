@@ -1,0 +1,189 @@
+---
+layout: page
+title: CV
+sidebar_link: true
+excerpt: "Kerry Walker: Senior C#/.NET Software Engineer & Team Lead. 18+ years making software ship, perform and last. Performance, legacy modernisation, integration and AI-assisted development."
+---
+
+<style>
+  /* ===== Scoped CV styles ===== */
+  header .page-title { display: none; } /* hide duplicate theme title on this page */
+
+  .cv { --accent: #90a959; --accent-dk: #6f8a3f; --ink: #23303d; --muted: #5f6b78; --line: #e6e9ec; --soft: #f6f8f3; }
+  .cv { color: var(--ink); line-height: 1.55; }
+  .cv * { box-sizing: border-box; }
+  .cv h2 { color: var(--ink); font-size: 1.25rem; margin: 2rem 0 .75rem; padding-bottom: .35rem; border-bottom: 2px solid var(--accent); }
+  .cv h3 { color: var(--ink); margin: 0; font-size: 1.02rem; }
+  .cv a { color: var(--accent-dk); }
+
+  /* Hero */
+  .cv-hero { background: var(--ink); color: #fff; border-radius: 14px; padding: 1.6rem 1.7rem; }
+  .cv-hero .name { font-size: 1.9rem; font-weight: 700; letter-spacing: -.5px; margin: 0; color:#fff; }
+  .cv-hero .role { color: var(--accent); font-weight: 600; margin: .2rem 0 .7rem; font-size: 1.02rem; }
+  .cv-hero p { color: #d6dde4; margin: 0 0 1rem; font-size: .96rem; }
+  .cv-hero p strong { color: #ffffff; }
+  .cv-hero .meta { font-size: .82rem; color: #9fb0be; letter-spacing: .3px; }
+  .cv-cta { display: flex; flex-wrap: wrap; gap: .55rem; margin-top: 1rem; }
+  .cv-btn { display: inline-block; background: var(--accent); color: #fff !important; text-decoration: none; font-weight: 600;
+            padding: .5rem .95rem; border-radius: 8px; font-size: .88rem; border: none; cursor: pointer; }
+  .cv-btn.ghost { background: transparent; color: #fff !important; border: 1px solid #4a5966; }
+  .cv-btn:hover { background: var(--accent-dk); }
+  .cv-btn.ghost:hover { background: rgba(255,255,255,.08); }
+
+  /* Problem cards */
+  .cv-cards { display: grid; grid-template-columns: 1fr 1fr; gap: .75rem; margin-top: .5rem; }
+  .cv-card { background: var(--soft); border: 1px solid var(--line); border-left: 3px solid var(--accent); border-radius: 8px; padding: .8rem .95rem; }
+  .cv-card .q { font-weight: 700; color: var(--ink); font-size: .92rem; }
+  .cv-card .a { font-size: .88rem; color: var(--muted); margin-top: .25rem; }
+
+  /* Metrics */
+  .cv-metrics { display: grid; grid-template-columns: repeat(4, 1fr); gap: .6rem; margin-top: .3rem; }
+  .cv-metric { text-align: center; background: var(--soft); border: 1px solid var(--line); border-radius: 8px; padding: .75rem .4rem; }
+  .cv-metric b { display: block; font-size: 1.35rem; color: var(--accent-dk); line-height: 1.1; }
+  .cv-metric span { font-size: .74rem; color: var(--muted); }
+
+  /* Experience */
+  .cv-job { padding: .85rem 0; border-bottom: 1px solid var(--line); }
+  .cv-job:last-child { border-bottom: none; }
+  .cv-job .top { display: flex; justify-content: space-between; align-items: baseline; flex-wrap: wrap; gap: .2rem; }
+  .cv-job .co { color: var(--accent-dk); font-weight: 600; font-size: .9rem; }
+  .cv-job .yr { color: var(--muted); font-size: .82rem; white-space: nowrap; }
+  .cv-job ul { margin: .5rem 0 .3rem; padding-left: 1.1rem; }
+  .cv-job li { font-size: .9rem; margin-bottom: .28rem; }
+  .cv-job .stack { font-size: .78rem; color: var(--muted); }
+
+  /* Skills */
+  .cv-skills { display: flex; flex-wrap: wrap; gap: .4rem; }
+  .cv-tag { background: var(--soft); border: 1px solid var(--line); border-radius: 999px; padding: .28rem .7rem; font-size: .8rem; color: var(--ink); }
+  .cv-tag.key { background: var(--accent); color: #fff; border-color: var(--accent); font-weight: 600; }
+
+  .cv-note { font-size: .8rem; color: var(--muted); margin-top: 1.5rem; font-style: italic; }
+
+  @media (max-width: 620px) {
+    .cv-cards { grid-template-columns: 1fr; }
+    .cv-metrics { grid-template-columns: 1fr 1fr; }
+  }
+</style>
+
+<div class="cv" markdown="0">
+
+  <div class="cv-hero">
+    <p class="name">Kerry Walker</p>
+    <p class="role">Senior C#/.NET Software Engineer &amp; Team Lead</p>
+    <p>18+ years making software <strong>ship, perform and last</strong>. I take C#/.NET systems that are slow, stalled, or stuck on ageing technology and turn them into products businesses depend on. Specialisms: performance, legacy modernisation, system integration, and AI-assisted development.</p>
+    <div class="meta">Chester, UK &nbsp;·&nbsp; Remote-first</div>
+    <div class="cv-cta">
+      <a class="cv-btn" href="https://www.linkedin.com/in/kerry-walker-chester" target="_blank" rel="noopener">Connect on LinkedIn</a>
+      <a class="cv-btn ghost" href="https://github.com/KerryWalker" target="_blank" rel="noopener">GitHub</a>
+      <a class="cv-btn ghost" href="{{ '/assets/Kerry-Walker-CV.pdf' | relative_url }}" target="_blank" rel="noopener">Download CV (PDF)</a>
+    </div>
+  </div>
+
+  <h2>Problems I'm brought in to solve</h2>
+  <div class="cv-cards">
+    <div class="cv-card"><div class="q">"It's too slow to even demo."</div><div class="a">I cut a core import from several hours to under 5 minutes on a million-row dataset, unblocking a product that shipped after 5 years in development.</div></div>
+    <div class="cv-card"><div class="q">"Nobody wants to touch this old system."</div><div class="a">I modernise across the whole .NET lifecycle: VB6 to .NET, .NET Framework to .NET 9, desktop to Blazor web, safely and incrementally.</div></div>
+    <div class="cv-card"><div class="q">"We need these two systems to talk."</div><div class="a">I'm repeatedly the first to integrate platforms that have never connected: payments, CRM, EPOS, hospitality platforms and hardware devices.</div></div>
+    <div class="cv-card"><div class="q">"We want to move faster with AI."</div><div class="a">I build AI-assisted dev workflows with Claude Code: automated code review, AI test generation and custom internal-tool integrations.</div></div>
+  </div>
+
+  <h2>By the numbers</h2>
+  <div class="cv-metrics">
+    <div class="cv-metric"><b>18+</b><span>years in C#/.NET</span></div>
+    <div class="cv-metric"><b>100x+</b><span>import speed-up</span></div>
+    <div class="cv-metric"><b>.NET 9</b><span>current platform</span></div>
+    <div class="cv-metric"><b>80GB</b><span>DB merger delivered</span></div>
+  </div>
+
+  <h2>Experience</h2>
+
+  <div class="cv-job">
+    <div class="top"><h3>Software Developer / Team Lead</h3><span class="yr">2024 to Present</span></div>
+    <div class="co">ParcVu Systems · Remote</div>
+    <ul>
+      <li>Lead a team of 4 building a <strong>.NET 9 Blazor</strong> platform used by several of the UK's largest holiday-park operators; revived a stalled project and shipped its first release with CI/CD delivering every 2 weeks.</li>
+      <li>Architected a first-of-its-kind integration with a major European hospitality platform via an <strong>Azure</strong> synchronisation service.</li>
+      <li>Delivered a <strong>gRPC + IdentityServer4 OAuth</strong> migration and introduced an <strong>AI-assisted development</strong> workflow (Claude Code).</li>
+    </ul>
+    <div class="stack">C# · .NET 9 · Blazor · Azure · EF Core · gRPC · SQL Server · CI/CD</div>
+  </div>
+
+  <div class="cv-job">
+    <div class="top"><h3>Software Developer</h3><span class="yr">2021 to 2024</span></div>
+    <div class="co">Forensic Analytics · Remote</div>
+    <ul>
+      <li>Built and optimised analytical software used by <strong>most UK Police forces</strong> and international law-enforcement agencies.</li>
+      <li>Cut core import from <strong>hours to under 5 minutes</strong> on a million-row dataset, unblocking a launch after 5 years in development.</li>
+      <li>Migrated <strong>.NET Framework 4.6 to .NET 5</strong>, re-architected to UTC, and raised test coverage.</li>
+    </ul>
+    <div class="stack">C# · .NET 5 · Performance Optimization · SQL Server · Entity Framework</div>
+  </div>
+
+  <div class="cv-job">
+    <div class="top"><h3>Software Developer</h3><span class="yr">2014 to 2021</span></div>
+    <div class="co">ParcVu Systems · Chester</div>
+    <ul>
+      <li>Led the company's first move from <strong>desktop to web</strong>: chose Blazor and built the reusable framework the team still builds on.</li>
+      <li>Delivered multiple integrations: <strong>Salesforce</strong>, SagePay Cloud payments (REST) and a Zonal EPOS integration (REST &amp; SOAP).</li>
+      <li>Managed an <strong>80GB post-merger database reconciliation</strong> across 10 years of divergent schema; became secondary product owner.</li>
+    </ul>
+    <div class="stack">C# · .NET Framework / Core · Blazor · WPF · SQL Server · REST · SOAP</div>
+  </div>
+
+  <div class="cv-job">
+    <div class="top"><h3>Software Developer</h3><span class="yr">2011 to 2013</span></div>
+    <div class="co">Potts Mullarkey</div>
+    <ul>
+      <li>Designed a <strong>credit-card processing system</strong> integrating two major gateways for card-not-present and Chip &amp; PIN payments.</li>
+    </ul>
+    <div class="stack">C# · .NET Framework · WinForms · SQL Server · Payment Integration</div>
+  </div>
+
+  <div class="cv-job">
+    <div class="top"><h3>Software Engineer</h3><span class="yr">2010 to 2011 &amp; 2013 to 2014</span></div>
+    <div class="co">Remsdaq</div>
+    <ul>
+      <li>Developed a WPF <strong>security &amp; access-control platform</strong> (CCTV, intruder, access control); integrated multiple third-party video systems, delivered ONVIF camera-discovery R&amp;D and a SALTO integration over a custom TCP protocol.</li>
+    </ul>
+    <div class="stack">C# · .NET · WPF · TCP/UDP · System Integration · Real-Time Systems</div>
+  </div>
+
+  <div class="cv-job">
+    <div class="top"><h3>Application Developer</h3><span class="yr">2008 to 2010</span></div>
+    <div class="co">Triangle Software</div>
+    <ul>
+      <li>Turned around several failing projects; rebuilt a VB6 system handling <strong>£1M+ per week</strong> in BACS transfers, and cut a transport-industry printing job from days to seconds.</li>
+    </ul>
+    <div class="stack">C# · .NET · SQL Server · VB6 · Legacy Modernisation</div>
+  </div>
+
+  <h2>Core skills</h2>
+  <div class="cv-skills">
+    <span class="cv-tag key">C#</span>
+    <span class="cv-tag key">.NET / .NET 9</span>
+    <span class="cv-tag key">Azure</span>
+    <span class="cv-tag">Blazor</span>
+    <span class="cv-tag">SQL Server</span>
+    <span class="cv-tag">Entity Framework Core</span>
+    <span class="cv-tag">REST APIs</span>
+    <span class="cv-tag">gRPC</span>
+    <span class="cv-tag">WPF / WinForms</span>
+    <span class="cv-tag">Performance Optimisation</span>
+    <span class="cv-tag">Legacy Modernisation</span>
+    <span class="cv-tag">System Integration</span>
+    <span class="cv-tag">CI/CD</span>
+    <span class="cv-tag">Docker</span>
+    <span class="cv-tag">Team Leadership</span>
+    <span class="cv-tag">AI-Assisted Development</span>
+  </div>
+
+  <h2>Education</h2>
+  <p style="font-size:.92rem;margin:.2rem 0;"><strong>BSc Computer Science, 1st Class</strong> · University of Chester (2004 to 2007)<br>
+  <span style="color:var(--muted);font-size:.86rem;">Earlier: BTEC HNC, Electrical &amp; Electronic Engineering. A first career in engineering that shaped a diagnostic, calm-under-pressure approach to software.</span></p>
+
+  <h2>Get in touch</h2>
+  <p style="font-size:.94rem;">The best way to reach me is <a href="https://www.linkedin.com/in/kerry-walker-chester" target="_blank" rel="noopener">on LinkedIn</a>. I'm happy to talk about senior .NET roles, performance, migrations or AI-assisted development.</p>
+
+  <p class="cv-note">This page keeps personal details to a minimum by design. For a full CV, connect with me on LinkedIn or request one directly.</p>
+
+</div>
