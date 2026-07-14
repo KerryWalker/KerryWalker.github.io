@@ -9,7 +9,7 @@ tags:
   - cloudflare
 ---
 
-I recently [added Google Analytics](/2026/02/07/adding-google-analytics-to-jekyll/) to this blog. The setup was straightforward, the tracking code was firing correctly, but nothing was showing up in the realtime reports. No visitors, no page views, nothing.
+I recently [added Google Analytics](/2026/02/07/adding-google-analytics-to-jekyll.html) to this blog. The setup was straightforward, the tracking code was firing correctly, but nothing was showing up in the realtime reports. No visitors, no page views, nothing.
 
 After some investigation, the issue was almost certainly ad blockers. Google Analytics is on every single ad blocker list out there - uBlock Origin, Brave, AdGuard, you name it. The script gets blocked before it can send any data back to Google. Given how many people run ad blockers these days, there's a good chance a significant chunk of visitors are simply invisible to GA4.
 

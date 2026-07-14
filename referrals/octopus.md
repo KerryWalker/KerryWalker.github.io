@@ -16,7 +16,7 @@ I'm an Octopus Energy customer and I'd like to share my referral link with you. 
 
 ## Why Octopus?
 
-I've written about Octopus a fair bit on this blog - I use their [Intelligent Go tariff](/2026/02/05/switching-octopus-agile-to-intelligent-go-predbat-tesla/) for cheap overnight EV charging and home battery top-ups. A few things I genuinely like:
+I've written about Octopus a fair bit on this blog - I use their [Intelligent Go tariff](/2026/02/05/switching-octopus-agile-to-intelligent-go-predbat-tesla.html) for cheap overnight EV charging and home battery top-ups. A few things I genuinely like:
 
 - **Competitive rates** - their fixed, flexible, tracker, and smart tariffs are consistently among the cheapest
 - **Great app** - easy to track usage, submit readings, and manage your account

@@ -37,9 +37,9 @@ A few things I particularly like:
 
 I've written about my Tesla and EV charging setup in more detail:
 
-- [Switching from Octopus Agile to Intelligent Go with Predbat and Tesla](/2026/02/05/switching-octopus-agile-to-intelligent-go-predbat-tesla/) - cheap overnight EV charging via Octopus
-- [Predbat Tesla EV Charging with Hypervolt](/2026/01/24/predbat-tesla-ev-charging-hypervolt/) - automated charging based on energy prices
-- [Migrating from MyTeslaMate to Home Assistant](/2026/01/29/migrating-myteslamate-to-home-assistant/) - tracking drives, charges, and efficiency locally
+- [Switching from Octopus Agile to Intelligent Go with Predbat and Tesla](/2026/02/05/switching-octopus-agile-to-intelligent-go-predbat-tesla.html) - cheap overnight EV charging via Octopus
+- [Predbat Tesla EV Charging with Hypervolt](/2026/01/24/predbat-tesla-ev-charging-hypervolt.html) - automated charging based on energy prices
+- [Migrating from MyTeslaMate to Home Assistant](/2026/01/29/migrating-myteslamate-to-home-assistant.html) - tracking drives, charges, and efficiency locally
 
 ---
 

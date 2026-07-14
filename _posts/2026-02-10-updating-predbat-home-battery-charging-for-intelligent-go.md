@@ -10,7 +10,7 @@ tags:
   - growatt
 ---
 
-In my [previous post](/2026/02/05/switching-octopus-agile-to-intelligent-go-predbat-tesla/) I covered switching from Octopus Agile to [Intelligent Go](https://share.octopus.energy/lush-cliff-190) and getting Octopus to control my Tesla charging. That all went smoothly, but I'd missed something - I hadn't updated Predbat's `apps.yaml` to properly handle home battery charging on the new tariff.
+In my [previous post](/2026/02/05/switching-octopus-agile-to-intelligent-go-predbat-tesla.html) I covered switching from Octopus Agile to [Intelligent Go](https://share.octopus.energy/lush-cliff-190) and getting Octopus to control my Tesla charging. That all went smoothly, but I'd missed something - I hadn't updated Predbat's `apps.yaml` to properly handle home battery charging on the new tariff.
 
 On Agile, Predbat was doing all the heavy lifting - calculating the cheapest half-hourly slots and charging the Growatt batteries accordingly. With Intelligent Go the rates are fixed (7p off-peak, 30.5p peak), but Predbat still needs to know about the Intelligent Go dispatch slots so it can charge the home battery during cheap periods, including any bonus slots Octopus grants outside the standard 23:30-05:30 window.
 
