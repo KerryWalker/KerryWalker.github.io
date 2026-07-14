@@ -1,5 +1,6 @@
 ---
 layout: post
+affiliate: true
 title: Switching from Octopus Agile to Intelligent Go with Predbat and Tesla
 excerpt: How to reconfigure Home Assistant and Predbat when moving from Octopus Agile (Predbat-led charging) to Intelligent Go (Octopus-led charging) while keeping preheating working.
 tags:

@@ -1,5 +1,6 @@
 ---
 layout: post
+affiliate: true
 title: Setting Up Predbat with Solar Assistant and Growatt SPH for Octopus Agile
 excerpt: A complete guide to configuring Predbat for battery charging optimisation with a Growatt SPH inverter, Solar Assistant, and Octopus Agile tariff.
 tags:
@@ -10,7 +11,7 @@ tags:
   - octopus-agile
 ---
 
-I've been running a Growatt SPH inverter with two GBLI 6.5kWh batteries (13kWh total) on Octopus Agile, using Predbat to optimise battery charging during the cheapest half-hour slots. Getting the configuration right took some trial and error, so here's the complete setup.
+I've been running a Growatt SPH inverter with two GBLI 6.5kWh batteries (13kWh total) on [Octopus Agile](https://share.octopus.energy/lush-cliff-190), using Predbat to optimise battery charging during the cheapest half-hour slots. Getting the configuration right took some trial and error, so here's the complete setup.
 
 ## The Hardware
 
