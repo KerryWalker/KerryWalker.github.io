@@ -1,5 +1,6 @@
 ---
 layout: post
+pillar: dashboards
 published: true
 title: "Family Dashboard Part 2: A Custom Concentric Energy Gauge"
 excerpt: "Replacing three separate horseshoe cards with a single SVG gauge showing solar, battery, grid and load — built with Jinja2 templates."

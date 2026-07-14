@@ -1,6 +1,7 @@
 ---
 layout: post
 affiliate: true
+pillar: energy
 title: Updating Predbat Home Battery Charging for Octopus Intelligent Go
 excerpt: After switching from Octopus Agile to Intelligent Go and setting up Tesla charging, I'd missed updating Predbat's apps.yaml for home battery charging. Here's what needed changing.
 tags:

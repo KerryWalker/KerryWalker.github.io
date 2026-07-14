@@ -1,5 +1,6 @@
 ---
 layout: post
+pillar: ev
 title: Hypervolt Auto Lock/Unlock Automation with Home Assistant and Tesla
 excerpt: How to automatically lock and unlock a Hypervolt EV charger using Home Assistant automations when a Tesla plugs in or unplugs.
 tags:

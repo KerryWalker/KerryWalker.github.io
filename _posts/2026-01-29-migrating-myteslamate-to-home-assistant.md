@@ -1,5 +1,6 @@
 ---
 layout: post
+pillar: ev
 title: Migrating from MyTeslaMate to a Local TeslaMate Installation on Home Assistant
 excerpt: How to export your database from MyTeslaMate and restore it to a self-hosted TeslaMate instance running on Home Assistant OS.
 tags:

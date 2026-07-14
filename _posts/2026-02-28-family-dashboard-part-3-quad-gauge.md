@@ -1,5 +1,6 @@
 ---
 layout: post
+pillar: dashboards
 published: true
 title: "Family Dashboard Part 3: Simplifying the Energy Gauge"
 excerpt: "The concentric horseshoe looked great but was too cluttered. Replacing it with a clean 2×2 quad gauge layout inspired by Solar Assistant."

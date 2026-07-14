@@ -1,6 +1,7 @@
 ---
 layout: post
 affiliate: true
+pillar: ev
 title: Predbat EV Charging with Tesla Fleet and Hypervolt on Octopus Agile
 excerpt: How to configure Predbat to control Tesla charging via Home Assistant, using the cheapest Octopus Agile slots with a Hypervolt charger.
 tags:

@@ -1,6 +1,7 @@
 ---
 layout: post
 affiliate: true
+pillar: energy
 title: Setting Up Predbat with Solar Assistant and Growatt SPH for Octopus Agile
 excerpt: A complete guide to configuring Predbat for battery charging optimisation with a Growatt SPH inverter, Solar Assistant, and Octopus Agile tariff.
 tags:
