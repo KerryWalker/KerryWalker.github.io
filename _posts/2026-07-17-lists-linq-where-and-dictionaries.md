@@ -1,6 +1,5 @@
 ---
 layout: post
-published: false
 title: Lists, LINQ Where and Dictionaries — .NET Performance in Plain English
 excerpt: Why filtering one list against another grinds to a halt on real-world data, and how a HashSet or Dictionary fixes it — explained with a child's birthday party. First in a short series on .NET performance problems.
 tags:
@@ -46,7 +45,7 @@ foreach (var item in caseList)
 }
 ```
 
-A loop inside a loop. `Contains` on a `List` has no shortcut — it starts at the front and checks every element until it finds a match or runs out. So for every case, we potentially read the entire id list. The same applies to `caseIdList.Any(y => y == x.CaseId)`, which is the same pattern wearing a different method name.
+A loop inside a loop. `Contains` on a `List` has no shortcut. It starts at the front and checks every element until it finds a match or runs out, so for every case we potentially read the entire id list. You get the same thing with `caseIdList.Any(y => y == x.CaseId)`. It's the same work under a different method name.
 
 To see why that matters, forget the code for a minute.
 
@@ -92,20 +91,15 @@ var cases = caseIdList.Select(id => casesById[id]);
 
 The difference between the two fixes is what you get back. A `HashSet` answers yes/no — did this case survive the filter? A `Dictionary` fetches the value — give me the case for this id. If you catch yourself checking membership with a `HashSet` and then searching the list anyway to get the object, you wanted a `Dictionary` all along.
 
-## The Honest Bit: Building It Isn't Free
+## Building It Isn't Free
 
-Neither structure appears by magic. `ToHashSet` reads every id once; `ToDictionary` walks the whole street once, knocking on every door and writing down who lives where. That can feel like a waste — you've visited all 100 houses to build a directory you'll only use 10 times.
+Neither of these comes for free. `ToHashSet` reads every id once, and `ToDictionary` walks the whole street once, knocking on every door and writing down who lives where. That can feel like a waste. You've visited all 100 houses to build a directory you'll only use 10 times.
 
-But go back to the million-row case. Building the dictionary is a million operations, and the million lookups are a million more: two million in total, against the trillion we started with. And that's all the Big O notation from the intro means: the nested loops are O(n×m) — the work is the two sizes multiplied together — while a hash lookup is O(1), a fixed cost regardless of size.
+But go back to the million-row case. Building the dictionary is a million operations, and the million lookups are a million more: two million in total, against the trillion we started with. And that's all Big O notation really is, the thing you hear about all the time but never quite pin down. The nested loops are O(n×m), which just means the work is the two sizes multiplied together. A hash lookup is O(1), a fixed cost no matter the size.
 
-The one situation where it *isn't* worth it: a single lookup against a small list. If you're checking one id against twenty items, building anything is overhead. These structures pay for themselves through repeated lookups — which is exactly what a filter over a large dataset is doing.
+## Where It Gets More Complicated
 
-## Summary
+There are times when it isn't worth it: a small list, a single lookup. If you know your list is going to be small, say you're checking one id against twenty items, then building anything is a waste. These structures earn their keep when you look things up over and over, and that's a call you need to make when you build the system.
 
-- `list.Where(x => otherList.Contains(...))` hides a loop inside a loop — every item in one list scans the other.
-- Swapping which list is on the outside doesn't reduce the work.
-- Need yes/no? `ToHashSet()` the collection you call `.Contains()` on.
-- Need the matching object back? `ToDictionary()` and index straight in.
-- Building the structure costs one pass — trivial next to what the nested scan costs at scale.
+There's a lot more to it than this. In the real world a single property is rarely enough to identify a record, so you often need a key made up of several properties at once. That means choosing between a value tuple for the key or writing your own `IEqualityComparer`, and getting it wrong can lose you the speed you came for, or match records that shouldn't match. But this should cover the basics.
 
-Next in the series: what happens when the key isn't a single id — matching on multiple properties with tuple keys, records, and `IEqualityComparer`.
