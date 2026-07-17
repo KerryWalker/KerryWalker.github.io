@@ -36,6 +36,13 @@ tags:
 Content in Markdown...
 ```
 
+## Blog Style
+
+- British English, first person, practical tone. Posts open with the setup/problem, use short `##` sections, and end with a summary.
+- Round numbers in prose ("around 20,000 files"), not exact counts ("19,388 files"). Keep exact values only where precision is the point (prices, config values, measurements).
+- Drafts are flagged with `published: false` in front matter — there is no `_drafts/` folder. Remove the flag (or set `true`) to publish.
+- Home automation/energy posts carry a `pillar:` field (`energy`, `ev`, `dashboards`) that feeds the index page at `home-automation.md`. Dev posts have no pillar.
+
 ## Architecture
 
 - **Theme**: Hydeout (Jekyll theme) - layouts in `_layouts/`, partials in `_includes/`, styles in `_sass/hydeout/`
