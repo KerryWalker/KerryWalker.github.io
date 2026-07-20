@@ -37,16 +37,16 @@ No new thread was created. That's the whole point. The thread you already had wa
 The synchronous version holds the thread the whole time:
 
 ```csharp
-var data = File.ReadAllText("bigfile.txt");
+var cases = context.Cases.Where(x => x.Status == status).ToList();
 ```
 
 The async version hands over and lets the thread go:
 
 ```csharp
-var data = await File.ReadAllTextAsync("bigfile.txt");
+var cases = await context.Cases.Where(x => x.Status == status).ToListAsync();
 ```
 
-The line barely changes. But while that file is being read, the thread that was running your method isn't blocked waiting. It's off serving another request.
+The line barely changes. But while that query is running on the database, the thread that was running your method isn't blocked waiting. It's off serving another request.
 
 ## Why It Matters
 
@@ -55,5 +55,7 @@ On your machine, with one user, you'll never notice the difference. Both version
 But picture a web server handling a thousand requests, each one reading a file or waiting on the database. With synchronous IO you've got a thousand people stood frozen at the counter, one thread each, all doing nothing but waiting. Threads aren't free, and you'll run out of them long before you run out of actual work to do.
 
 With async IO those threads go back to the pool the moment they start waiting, ready to serve someone else. The same handful of threads can keep hundreds of requests moving, because none of them are stood around doing nothing.
+
+Like the last post, this is the plain-English version. In the real world there's more to it, which thread actually picks your code back up, how that gets decided, and a few ways to trip yourself up along the way. But this should cover the basics.
 
 So no, async/await doesn't create new threads. If anything it's the opposite. It's about not tying up the thread you already have.
