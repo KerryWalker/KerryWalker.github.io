@@ -22,11 +22,11 @@ Senior C#/.NET Software Engineer and Team Lead, 18 years in .NET, mostly on soft
 
 ## Skills
 
-**Core:** C# | .NET 9 / .NET Core / .NET Framework | Blazor | Azure | SQL Server | Entity Framework Core
+**Core:** C# | .NET 9 / .NET Core / .NET Framework | SQL Server | Blazor | Entity Framework Core | Azure
 **Integration & APIs:** REST | gRPC | SOAP | OAuth / OpenID Connect | payment, CRM & EPOS integrations
 **Domain:** UK VAT and accounting software | double-entry nominal ledgers | invoicing and settlements
-**Specialisms:** Performance Optimisation | Legacy Modernisation | Software Migration | System Integration
-**Delivery:** CI/CD | Docker | Azure DevOps | Git | Test-Driven Development | Team Leadership
+**Specialisms:** System Design | Performance Optimisation | Legacy Modernisation | Software Migration | System Integration
+**Delivery:** CI/CD | Azure DevOps | Git | Test-Driven Development | Team Leadership
 **AI:** AI-Assisted Development (Claude Code: code review, test generation, tooling)
 
 ---
