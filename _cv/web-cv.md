@@ -7,7 +7,7 @@
 
 ## Profile
 
-Senior C#/.NET Software Engineer and Team Lead, 18 years in .NET. Most of my work has been on software that already existed and mattered to someone: holiday park management and accounting systems, analytical software used by UK police forces, security and access control. A lot of it is an accounting system underneath, which means double-entry ledgers, invoicing and UK VAT under the statutory apportionment schemes. Specialisms in performance, legacy modernisation, system integration and AI-assisted development. 1st Class BSc in Computer Science, after a first career in electrical engineering.
+Senior C#/.NET Software Engineer and Team Lead, 18 years in .NET, mostly on software that already existed and mattered to someone: holiday park management systems, analytical software used by UK police forces, security and access control. The park systems are an accounting product underneath, which is where the double-entry ledgers, invoicing and UK VAT under the statutory apportionment schemes come in. Specialisms in performance, legacy modernisation, system integration and AI-assisted development. 1st Class BSc in Computer Science, after a first career in electrical engineering.
 
 ---
 
