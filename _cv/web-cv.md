@@ -11,7 +11,7 @@ Senior C#/.NET Software Engineer and Team Lead, 18 years in .NET, mostly on soft
 
 ---
 
-## Four things I keep ending up doing
+## Four things that keep coming up
 
 - **"It's too slow to even demo."** Cut a core import from several hours to under 5 minutes on a one-million-row dataset, unblocking a product that shipped after 5 years in development.
 - **"Nobody wants to touch this old system."** Modernised across the whole .NET lifecycle: VB6 to .NET, .NET Framework to .NET 9, desktop to Blazor web, safely and incrementally.
