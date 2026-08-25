@@ -11,12 +11,12 @@ Senior C#/.NET Software Engineer and Team Lead, 18 years in .NET, mostly on soft
 
 ---
 
-## Problems I Solve
+## Four things I keep ending up doing
 
 - **"It's too slow to even demo."** Cut a core import from several hours to under 5 minutes on a one-million-row dataset, unblocking a product that shipped after 5 years in development.
-- **"Nobody wants to touch this old system."** Modernise across the whole .NET lifecycle: VB6 to .NET, .NET Framework to .NET 9, desktop to Blazor web, safely and incrementally.
-- **"We need these two systems to talk."** Build the integrations nobody has attempted yet: payments, CRM, EPOS, hospitality platforms and hardware devices.
-- **"We want to move faster with AI."** Build AI-assisted development workflows with Claude Code: automated code review, AI test generation and custom internal-tool integrations.
+- **"Nobody wants to touch this old system."** Modernised across the whole .NET lifecycle: VB6 to .NET, .NET Framework to .NET 9, desktop to Blazor web, safely and incrementally.
+- **"We need these two systems to talk."** Built integrations across five very different fields: payment gateways, CRM, EPOS, hospitality platforms and hardware devices.
+- **"We want to move faster with AI."** Built AI-assisted development workflows with Claude Code: automated code review, AI test generation and custom internal-tool integrations.
 
 ---
 
@@ -34,7 +34,7 @@ Senior C#/.NET Software Engineer and Team Lead, 18 years in .NET, mostly on soft
 ## Experience
 
 ### Software Developer / Team Lead, ParcVu Systems (Remote) | 2024 to Present
-- Lead a team of 4 building a .NET 9 Blazor platform used by several of the UK's largest holiday-park operators; revived a stalled project and shipped its first release with CI/CD delivering every 2 weeks.
+- Lead a team of 4 building a .NET 9 Blazor platform used by more than 75 UK holiday park operators; revived a stalled project and shipped its first release with CI/CD delivering every 2 weeks.
 - Wrote the large majority of the integration with a major European hospitality platform, including the invoice and ledger-account layer that maps posting rows, with their VAT rates and nominal codes, into the partner's accounting model.
 - Work across the accounting core: double-entry ledgers, nominal codes, invoicing, statements, cash matching and UK VAT under the statutory apportionment schemes.
 - Delivered a gRPC + IdentityServer4 OAuth migration and introduced an AI-assisted development workflow with Claude Code.
