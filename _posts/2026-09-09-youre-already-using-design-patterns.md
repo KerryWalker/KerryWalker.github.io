@@ -51,4 +51,4 @@ That was the moment it turned around for me. Not "here's a new thing to learn", 
 
 So I'm not going to hand you a catalogue. Over the next few posts I'll take the patterns worth knowing one at a time, with an everyday comparison and, more usefully, where you've almost certainly already met them in .NET. Streams, events, dependency injection, the framework is full of them.
 
-Don't set out to memorise all twenty-odd. Most of the time you only need to recognise the handful you keep bumping into, and be able to put a name to what you're already doing. That's the part the book couldn't give me, and it's the part that would have got me through that interview.
+Don't set out to memorise all twenty-odd. Most of the time you only need to recognise the handful you keep bumping into, and be able to put a name to what you're already doing. That's the part the book couldn't give me, and it's the part that would have saved me that awkward moment in the interview.
