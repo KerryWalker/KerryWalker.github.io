@@ -39,13 +39,13 @@ public interface IFindViewModel
 }
 ```
 
-There's a `FindCustomersViewModel` that implements it, a `FindInvoicesViewModel`, an orders one, and a couple of dozen more. The find screen takes an `IFindViewModel` and just talks to the interface. Hand it the customers one and it's a customer search. Hand it the invoices one and it's an invoice search. The screen never changes.
+There's a `FindCustomersViewModel` that implements it, a `FindInvoicesViewModel`, an orders one, and a load more. The find screen takes an `IFindViewModel` and just talks to the interface. Hand it the customers one and it's a customer search. Hand it the invoices one and it's an invoice search. The screen never changes.
 
 That's the Strategy pattern. The find screen is the bit that stays the same, and each viewmodel is an interchangeable strategy that decides what "find" actually means on that page. If you've ever injected an interface so you could swap the implementation, you've written dozens of these without once thinking of the word.
 
 That was the moment it turned around for me. Not "here's a new thing to learn", but "oh, *that's* what that's called."
 
-(If you're wondering how each page gets handed the right one out of the couple of dozen, that's keyed dependency injection doing the choosing. It's a nice trick, and a post all of its own.)
+(If you're wondering how each page gets handed the right one, that's keyed dependency injection doing the choosing. It's a nice trick, and a post all of its own.)
 
 ## Where This Is Going
 
