@@ -1,7 +1,11 @@
 ---
 layout: page
-title: Tesla Referral Code UK
-excerpt: Use my Tesla referral link to get 650 free Supercharging miles on a Model 3 or Model Y, or £500 off a Model S or Model X.
+title: "Tesla Referral Code UK: 650 Free Supercharging Miles"
+short_title: Tesla
+excerpt: Use my Tesla referral link before you order to get 650 free Supercharging miles on a Model 3 or Model Y, or £500 off a Model S or Model X. Plus my honest experience of owning a Model Y.
+referral: true
+referral_summary: 650 free Supercharging miles on a Model 3/Y, or £500 off a Model S/X
+back_page: index.md
 ---
 
 If you're ordering a new Tesla, use my referral link to get a bonus at delivery:
@@ -40,6 +44,30 @@ I've written about my Tesla and EV charging setup in more detail:
 - [Switching from Octopus Agile to Intelligent Go with Predbat and Tesla](/2026/02/05/switching-octopus-agile-to-intelligent-go-predbat-tesla.html) - cheap overnight EV charging via Octopus
 - [Predbat Tesla EV Charging with Hypervolt](/2026/01/24/predbat-tesla-ev-charging-hypervolt.html) - automated charging based on energy prices
 - [Migrating from MyTeslaMate to Home Assistant](/2026/01/29/migrating-myteslamate-to-home-assistant.html) - tracking drives, charges, and efficiency locally
+
+## Frequently Asked Questions
+
+### How do I use a Tesla referral code in the UK?
+
+Open the referral link above and start your order from there, or enter the code from the link in the referral section of the Tesla app before you place the order. The referral has to be attached before you pay the order fee.
+
+### Can I add a Tesla referral code after ordering?
+
+No. Tesla doesn't apply referrals retrospectively. If you've already ordered without one, the only option is to cancel and reorder, which usually isn't worth it.
+
+### Does the Tesla referral work on used or inventory cars?
+
+It works on new inventory cars ordered through Tesla's website as well as custom orders. It doesn't apply to used Teslas bought through Tesla or third parties.
+
+### When do the free Supercharging miles arrive?
+
+They're added to your Tesla account when the car is delivered and show up under Loot Box in the app. They typically need to be used within a set period, so check the expiry date once they land.
+
+### What do you get for referring me?
+
+I receive Supercharging credits when a referral is used. It doesn't cost you anything and doesn't change the price of your car.
+
+{% include referral-links.html %}
 
 ---
 

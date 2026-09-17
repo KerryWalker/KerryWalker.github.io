@@ -6,6 +6,7 @@ title:            Kerry Walker
 tagline:          'Random Stuff'
 description:      'Software Engineer, Forgetful Blogger, Lucky Husband, Proud Father'
 url:              https://www.kerrywalker.uk
+lang:             en_GB
 include: [".well-known"]
 baseurl:          '/'
                   # the optional subpath of your site, e.g. "/blog"
@@ -27,6 +28,7 @@ plugins:
   - jekyll-gist
   - jekyll-paginate
   - jekyll-sitemap
+  - jekyll-seo-tag
 
 google_analytics: G-5MYC3DL2XD
 # Sidebar link settings

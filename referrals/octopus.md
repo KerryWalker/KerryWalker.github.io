@@ -1,7 +1,11 @@
 ---
 layout: page
-title: Octopus Energy Referral Code
-excerpt: Switch to Octopus Energy using my referral link for £50 free account credit, plus an extra £25 from me. That's £75 total for switching.
+title: "Octopus Energy Referral Code: £50 Free Credit Plus an Extra £25"
+short_title: Octopus Energy
+excerpt: Switch to Octopus Energy with my referral link for £50 free account credit, plus an extra £25 from me. That's £75 in total for switching, with no catch.
+referral: true
+referral_summary: £50 free account credit when you switch, plus an extra £25 from me
+back_page: index.md
 ---
 
 I'm an Octopus Energy customer and I'd like to share my referral link with you. If you switch using the link below, you'll get **£50 free credit** on your Octopus account from their referral scheme. On top of that, I'll send you an extra **£25** from my share of the reward - making it **£75 in total**.
@@ -54,6 +58,30 @@ Once you've switched using [my referral link](https://share.octopus.energy/lush-
 </form>
 
 I'll get in touch via email to arrange payment once the referral reward comes through. I won't share your details with anyone.
+
+## Frequently Asked Questions
+
+### How much do I get for switching to Octopus with a referral link?
+
+Octopus gives you £50 credit on your account once your switch completes. I get £50 as well, and I pass £25 of that on to you, so you end up with £75 in total.
+
+### When does the £50 Octopus credit appear?
+
+Octopus adds the credit to your account shortly after your switch completes and your first payment or top-up has gone through. It usually shows within a couple of weeks.
+
+### Does the referral work if I'm moving house rather than switching supplier?
+
+The referral scheme is for new Octopus customers. If you're moving into a property already supplied by Octopus, contact them before you set up your account and ask whether a referral can be applied. In my experience it depends on how the account is created.
+
+### Can I use the referral link for gas and electricity?
+
+Yes. The link works whether you switch electricity only or both gas and electricity to Octopus. The £50 credit is the same either way.
+
+### Which Octopus tariff should I pick?
+
+If you've got an EV, heat pump, home battery, or solar, look at the smart tariffs (Intelligent Go, Agile, Cosy, or Flux). If not, their standard flexible or fixed tariffs are usually competitive. You can switch tariffs later without affecting the referral credit.
+
+{% include referral-links.html %}
 
 ---
 

@@ -1,7 +1,11 @@
 ---
 layout: page
-title: Yoto Player Referral Code
-excerpt: Use my Yoto referral link to save on your first Yoto Player or Yoto Mini. Plus an honest comparison of the two players to help you decide.
+title: "Yoto Referral Code: Discount on Your First Yoto Player or Mini"
+short_title: Yoto Player
+excerpt: Use my Yoto referral link to save on your first Yoto Player or Yoto Mini, plus an honest parent's comparison of the two players to help you decide which to buy.
+referral: true
+referral_summary: discount on your first Yoto Player or Yoto Mini order
+back_page: index.md
 ---
 
 If you're thinking about getting a Yoto player, here's my referral link to save on your first order:
@@ -67,6 +71,30 @@ A few things that stand out:
 - **No microphone or camera** - completely private, which I really appreciate
 - **Yoto Daily** - a free daily podcast that covers news, jokes, and facts. My kids listen to it every morning
 - **Make Your Own cards** - you can record yourself reading books or load MP3s onto blank cards
+
+## Frequently Asked Questions
+
+### How much does the Yoto referral link save?
+
+Yoto sets the discount and changes it from time to time, so the exact amount shows in your basket when you follow the link. It's applied as money off your first order rather than as a code you type in.
+
+### Does the Yoto referral discount work on cards?
+
+Usually it needs a player in the basket. Card-only orders typically fall below the minimum spend, so add a Yoto Player or Yoto Mini first and then the cards.
+
+### Does the discount work if I've already got a Yoto account?
+
+The referral is for new customers making their first order. If you already have an account and have ordered before, it won't apply.
+
+### Yoto Player or Yoto Mini for a 3 year old?
+
+The full-size Player for the bedroom if you want the nightlight and Ok-to-wake clock, the Mini if it's mainly for the car and holidays. If it's a first player and budget allows, we'd go for the full-size one.
+
+### What age is Yoto for?
+
+Yoto suggests from about 3 upwards, and the cards range from toddler stories through to chapter books for older children. Our two are 4 and 6 and both use theirs daily.
+
+{% include referral-links.html %}
 
 ---
 

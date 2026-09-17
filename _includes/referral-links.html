@@ -1,0 +1,17 @@
+{%- comment -%}
+Lists every page with `referral: true` in its front matter, except the current page.
+Each referral page sets `referral_summary` for the one-line description shown here.
+{%- endcomment -%}
+{%- assign referral_pages = site.pages | where: "referral", true | sort: "title" -%}
+{%- assign others = referral_pages | where_exp: "p", "p.url != page.url" -%}
+{%- if others.size > 0 -%}
+## More Referral Codes
+
+Other products and services I use and recommend:
+
+<ul>
+{%- for p in others %}
+  <li><strong><a href="{{ p.url | relative_url }}">{{ p.short_title | default: p.title }}</a></strong>{% if p.referral_summary %} - {{ p.referral_summary }}{% endif %}</li>
+{%- endfor %}
+</ul>
+{%- endif -%}
