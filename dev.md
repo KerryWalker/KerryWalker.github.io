@@ -1,8 +1,9 @@
 ---
 layout: page
-title: .NET & SQL
+title: Software Development
+short_title: Dev
 sidebar_link: true
-excerpt: Design patterns explained with real production code, .NET performance in plain English, and the SQL Server gotchas that cost me an afternoon.
+excerpt: Design patterns explained with real production code, .NET performance in plain English, the SQL Server gotchas that cost me an afternoon, and notes on building this site.
 ---
 
 Twenty-odd years of writing line-of-business software in .NET, and this is where I write up the bits worth passing on: the patterns I use every day and what they're actually called, the performance problems I keep finding in code reviews, and the occasional gotcha that ruined a Friday.

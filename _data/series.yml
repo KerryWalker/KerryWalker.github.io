@@ -2,4 +2,4 @@
 # `url` points at the section of the pillar page listing every part.
 design-patterns:
   name: Design Patterns in Real Code
-  url: /dotnet.html#design-patterns
+  url: /dev.html#design-patterns
