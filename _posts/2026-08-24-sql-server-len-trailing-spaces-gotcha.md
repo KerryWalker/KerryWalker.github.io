@@ -1,6 +1,7 @@
 ---
 layout: post
 title: The SQL Server Gotcha Where LEN and RIGHT Disagree
+pillar: gotchas
 excerpt: LEN ignores trailing spaces but RIGHT doesn't, and the mismatch quietly corrupted a subset of our data during a system merge. A SQL Server gotcha that only showed up when the totals didn't add up.
 tags:
   - sql

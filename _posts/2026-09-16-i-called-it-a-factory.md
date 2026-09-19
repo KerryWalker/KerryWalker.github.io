@@ -1,6 +1,8 @@
 ---
 layout: post
 title: I Called It a Factory Without Knowing If It Was One
+pillar: patterns
+series: design-patterns
 excerpt: One screen, a drop-down, and eighteen different ways of analysing the data behind it. The Factory pattern in real code — and why the thing everyone calls a factory isn't in the famous book at all.
 tags:
   - design-patterns
@@ -22,7 +24,7 @@ That "everything else loads with it" is the whole job. Eighteen analyses, one sc
 
 ## Same Trick As Last Time
 
-If you read the last post this shape will look familiar. One screen that doesn't change, and the bit that varies pushed out behind an interface:
+If you read [the last post]({% post_url 2026-09-14-strategy-and-keyed-dependency-injection %}) this shape will look familiar. One screen that doesn't change, and the bit that varies pushed out behind an interface:
 
 ```csharp
 public interface IPivotHelper

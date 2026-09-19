@@ -1,6 +1,7 @@
 ---
 layout: post
 title: Lists, LINQ Where and Dictionaries — .NET Performance in Plain English
+pillar: performance
 excerpt: Why filtering one list against another grinds to a halt on real-world data, and how a HashSet or Dictionary fixes it — explained with a child's birthday party. First in a short series on .NET performance problems.
 tags:
   - csharp

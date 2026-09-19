@@ -8,11 +8,15 @@ layout: default
 <div class="content">
     {% include post-meta.html post=page %}
 
+    {% include series-nav.html position="top" %}
+
     <div class="post-body">
         {{ content }}
         {% if page.affiliate %}{% include affiliate-disclosure.html %}{% endif %}
         {% include post-tags.html post=page %}
     </div>
+
+    {% include series-nav.html position="bottom" %}
 
     {% include comments.html %}
     {% include related_posts.html %}

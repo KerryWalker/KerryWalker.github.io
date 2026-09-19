@@ -1,6 +1,8 @@
 ---
 layout: post
 title: You're Already Using Design Patterns, You Just Don't Know Their Names
+pillar: patterns
+series: design-patterns
 excerpt: Fifteen years ago I got asked about design patterns in an interview and didn't have a clue. Then I read the book and realised I'd been using them every day. Here's the reframe that finally made them make sense.
 tags:
   - design-patterns

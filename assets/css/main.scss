@@ -9,6 +9,46 @@ $sidebar-bg-color: #90a959;
 $heading-color: #90a959;
 @import "hydeout";
 
+// Series navigation
+.series-banner {
+  font-size: 0.85rem;
+  padding: 0.5rem 0.75rem;
+  margin-bottom: 1.5rem;
+  border-left: 3px solid $link-color;
+  background: rgba(144, 169, 89, 0.08);
+}
+
+.series-nav {
+  margin: 2rem 0 1rem;
+  padding-top: 1rem;
+  border-top: 1px solid #e5e5e5;
+
+  h2 {
+    font-size: 1.2rem;
+    margin-bottom: 0.5rem;
+  }
+
+  ul {
+    list-style: none;
+    padding-left: 0;
+    margin: 0;
+  }
+
+  li {
+    margin: 0.4rem 0;
+    font-size: 0.9rem;
+  }
+}
+
+.series-nav-label {
+  display: inline-block;
+  min-width: 5.5rem;
+  color: #767676;
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+}
+
 // Smaller related posts
 .related h2 {
   font-size: 1.2rem;

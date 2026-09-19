@@ -1,6 +1,7 @@
 ---
 layout: post
 title: Async/Await Does Not Create New Threads
+pillar: performance
 excerpt: The single most common thing people get wrong about async/await in .NET, explained with a trip to the garage. Second in a short series on .NET performance problems.
 tags:
   - csharp

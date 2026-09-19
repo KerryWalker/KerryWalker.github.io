@@ -1,0 +1,5 @@
+# Post series. The key is what goes in a post's `series:` front matter field.
+# `url` points at the section of the pillar page listing every part.
+design-patterns:
+  name: Design Patterns in Real Code
+  url: /dotnet.html#design-patterns

@@ -1,6 +1,7 @@
 ---
 layout: post
 title: Making Jekyll's Related Posts Actually Related
+pillar: jekyll
 excerpt: Jekyll's site.related_posts doesn't show related posts - it shows recent ones. Here's how to fix it with tag-based matching.
 tags:
   - jekyll

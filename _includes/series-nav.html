@@ -1,0 +1,50 @@
+{% comment %}
+Series navigation. Renders when a post has a `series:` field matching a key in
+_data/series.yml. Pass position="top" for the "Part N of ..." banner, or
+position="bottom" for previous/next links.
+Drafts (published: false) are not in site.posts, so they never appear here.
+{% endcomment %}
+
+{% if page.series %}
+  {% assign series_meta = site.data.series[page.series] %}
+  {% assign series_posts = site.posts | where: "series", page.series | sort: "date" %}
+
+  {% if series_posts.size > 1 %}
+    {% assign current_index = 0 %}
+    {% for series_post in series_posts %}
+      {% if series_post.url == page.url %}
+        {% assign current_index = forloop.index0 %}
+      {% endif %}
+    {% endfor %}
+
+    {% assign part_number = current_index | plus: 1 %}
+    {% assign previous_index = current_index | minus: 1 %}
+    {% assign next_index = current_index | plus: 1 %}
+
+    {% if include.position == "top" %}
+      <p class="series-banner">
+        Part {{ part_number }} of {{ series_posts.size }} in
+        <a href="{{ series_meta.url | relative_url }}">{{ series_meta.name }}</a>{% if current_index > 0 %} &middot;
+        <a href="{{ series_posts[0].url | relative_url }}">Start at the beginning</a>{% endif %}
+      </p>
+    {% else %}
+      <nav class="series-nav">
+        <h2>{{ series_meta.name }}</h2>
+        <ul>
+          {% if current_index > 0 %}
+            {% assign previous_post = series_posts[previous_index] %}
+            <li><span class="series-nav-label">Previous</span>
+              <a href="{{ previous_post.url | relative_url }}">{{ previous_post.title }}</a></li>
+          {% endif %}
+          {% if next_index < series_posts.size %}
+            {% assign next_post = series_posts[next_index] %}
+            <li><span class="series-nav-label">Next</span>
+              <a href="{{ next_post.url | relative_url }}">{{ next_post.title }}</a></li>
+          {% endif %}
+          <li><span class="series-nav-label">All parts</span>
+            <a href="{{ series_meta.url | relative_url }}">{{ series_meta.name }}</a></li>
+        </ul>
+      </nav>
+    {% endif %}
+  {% endif %}
+{% endif %}

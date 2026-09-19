@@ -1,6 +1,7 @@
 ---
 layout: post
 title: Building self-updating pillar pages in Jekyll with a front matter field
+pillar: jekyll
 excerpt: How I made a topic index page that builds itself in Jekyll, using a custom pillar front matter field and a Liquid loop, so new posts appear automatically and links never break.
 tags:
   - jekyll

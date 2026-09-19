@@ -1,6 +1,8 @@
 ---
 layout: post
 title: "One Screen, Many Searches: Strategy and Keyed DI"
+pillar: patterns
+series: design-patterns
 excerpt: A single search screen that works for customers, invoices, orders and every other entity in the app — one interface, many behaviours, and the keyed dependency injection that picks the right one. The Strategy pattern, in real code.
 tags:
   - design-patterns
@@ -8,7 +10,7 @@ tags:
   - dotnet
 ---
 
-At the end of the first post in this series I left a question hanging. I'd shown a single search screen handed a different view model on every page — the Strategy pattern, whether you call it that or not — and said that if you were wondering how each page gets the right one, that was a post of its own. This is that post.
+At the end of [the first post in this series]({% post_url 2026-09-09-youre-already-using-design-patterns %}) I left a question hanging. I'd shown a single search screen handed a different view model on every page — the Strategy pattern, whether you call it that or not — and said that if you were wondering how each page gets the right one, that was a post of its own. This is that post.
 
 Fair warning: this one goes a little deeper than the rest of the series. The patterns themselves are things you're already doing by accident. Picking one implementation out of many is something you go looking for on purpose. Normal service resumes next time.
 
