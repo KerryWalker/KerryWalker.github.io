@@ -56,8 +56,6 @@ public class PivotHelperFactory
             case PivotQueryType.StockMovements:
                 return new StockMovementsHelper(pivotGrid);
             // ...fifteen more
-            default:
-                throw new NotImplementedException();
         }
     }
 }
@@ -65,9 +63,7 @@ public class PivotHelperFactory
 
 That's it. The drop-down gives you an enum value, the factory hands back an `IPivotHelper`, and the screen never learns which class it got.
 
-(One thing I'd change, fifteen years on: that `default` throws the wrong exception. Nothing is unimplemented — the caller has passed a value I don't handle, which is what `ArgumentOutOfRangeException` is for. It's a small thing, but the wrong exception sends whoever hits it hunting for missing code that was never missing. My own code, so I can be rude about it.)
-
-There's a second reason this isn't done with dependency injection, and it's a better one than "there was no container". Look at the second parameter. The helper needs the live grid control off the screen — a real object that exists only once the form is up. A container can't hand you that; it doesn't know about it. Whenever the thing you're creating needs something only the caller has, a plain factory method beats a container, even in a modern app that's full of DI.
+There's a second reason this isn't done with dependency injection, and it's a better one than "there was no container". Look at the second parameter. The helper needs the live grid control off the screen — a real object that doesn't exist until someone opens the form. Hold that thought, because it turns out to be the thing that decides which kind of factory you want.
 
 ## So Is It Actually a Factory?
 
@@ -81,9 +77,7 @@ The Gang of Four book has two patterns with "factory" in the name, and this is n
 
 A switch on an enum that returns one of eighteen implementations is neither. It never made the book. It picked up the name **Simple Factory** afterwards, because developers kept writing it regardless of what the catalogue said, and it needed calling something.
 
-So I'd been comparing my code against two definitions that don't describe it, and quietly assuming I'd got it wrong. I hadn't. I'd written the version that turns up in real code far more often than either of the ones that got the official names.
-
-The lesson I'd take from that isn't about factories. It's that "is this really pattern X?" is usually the least interesting question you can ask. The useful question is whether the thing hides a decision that would otherwise be splattered across the codebase. Mine does. Everything else is filing.
+So I'd spent years comparing my code against two definitions that don't describe it, and quietly assuming I'd got it wrong. I hadn't. And the lesson isn't really about factories: "is this properly pattern X?" is usually the least interesting question you can ask. The useful one is whether the thing hides a decision that would otherwise be splattered across the codebase. Mine does. Everything else is filing.
 
 ## What the Real One Looks Like
 
@@ -117,18 +111,9 @@ On a migration that's the entire point. When two versions are live side by side,
 
 As for which factory you get: a little switch on a configuration setting, no more interesting than the pivot one. Which is what made the switchover a non-event — no deployment, no code change, just flip the setting and every request from that moment builds itself the new way, with the old way one edit away if it misbehaved.
 
-## The Same Idea, Grown Up
+## Or Let the Container Do It
 
-For a comparison, here's how the same job looks in a modern service I work on. Webhooks arrive as JSON from a third party, each one carrying an object type, and each type needs a different handler.
-
-The registration builds a dictionary instead of a switch:
-
-```csharp
-services.RegisterHandler<CustomerWebHookHandler>(ObjectType.Customer);
-services.RegisterHandler<OrderWebHookHandler>(ObjectType.Order);
-```
-
-And the factory looks the type up and asks the container for it:
+One more, because it looks like it contradicts what I said earlier. In a modern service I work on, webhooks arrive as JSON from a third party, each carrying an object type, and each type needs its own handler. The factory there doesn't `new` anything:
 
 ```csharp
 public IWebHookHandler Resolve(ObjectType objectType)
@@ -141,7 +126,11 @@ public IWebHookHandler Resolve(ObjectType objectType)
 }
 ```
 
-Different plumbing, same pattern. The mapping lives in a dictionary rather than a `switch`, instances come from the container rather than `new`, and the key arrives in a JSON payload rather than from a drop-down. Key in, interface out, concrete type hidden. That's a factory in both cases, and realising the two were the same thing wearing different clothes was worth more to me than any definition.
+Same shape — key in, interface out, concrete type hidden — but the mapping is a dictionary built at startup rather than a `switch`, and the instance comes from the container.
+
+So which is it? Earlier I said a container couldn't help because the pivot helper needs the live grid control. Both are true, and the difference between them is the rule worth keeping: **a container can build anything whose dependencies it already knows about.** These handlers need a logger and an API client, so the container has everything it needs. A pivot helper needs a control that didn't exist until someone opened a form. Nothing in a startup registration can supply that, so the caller has to.
+
+When the thing you're making needs something only the caller has, you `new` it. Otherwise let the container do the work.
 
 ## What It Bought
 
@@ -163,19 +152,10 @@ public class SalesByRegionHelper : AbstractSalesHelper, IPivotHelper
     }
 
     public string DefaultDataPropertyName => nameof(SalesDataDTO.Total);
-
-    public override IEnumerable<string> HiddenPropertyNames
-    {
-        get
-        {
-            yield return nameof(SalesDataDTO.RecordId);
-            yield return nameof(SalesDataDTO.DayOfWeek);
-        }
-    }
 }
 ```
 
-That's not really code so much as a description. Rows, columns, the number in the middle, and two fields the user doesn't need to see. Everything that actually does something — fetching the data, wiring the grid up, handling the drill-down back to the underlying records — lives further up in a base class shared by every analysis of that kind.
+That's not really code so much as a description. Rows, columns, and the number in the middle. Everything that actually does something — fetching the data, wiring the grid up, handling the drill-down back to the underlying records — lives further up in a base class shared by every analysis of that kind.
 
 Those base classes weren't designed up front. They grew. I'd write two analyses over the same sort of data, notice the same code in both, and pull it up into a shared parent. Do that a few times and you end up with a small family of base classes, one per kind of data, each with a handful of concrete analyses under it. I'll come back to that in a later post, because it has a name too.
 
@@ -183,7 +163,7 @@ What a nineteenth analysis costs today depends on the data. If it's another view
 
 ## In Short
 
-A factory is a class whose job is to decide which thing you get, so nothing else has to. Mine switches on an enum and news up a class; the modern one looks a type up in a dictionary and asks the container. Same pattern, different decade.
+A factory is a class whose job is to decide which thing you get, so nothing else has to. Key in, interface out, concrete type hidden. Mine switches on an enum and news up a class, but the shape is the same whether the key comes from a drop-down, a config setting or a payload off the wire.
 
 And if you've ever written one and wondered whether it counts as the real thing, it probably does. The version nearly everybody writes isn't in the book at all, which is a good reminder that the names came after the code, not the other way round.
 
