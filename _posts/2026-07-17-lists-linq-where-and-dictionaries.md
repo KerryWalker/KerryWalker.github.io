@@ -1,8 +1,8 @@
 ---
 layout: post
-title: Lists, LINQ Where and Dictionaries — .NET Performance in Plain English
+title: "Lists, LINQ Where and Dictionaries: .NET Performance in Plain English"
 pillar: performance
-excerpt: Why filtering one list against another grinds to a halt on real-world data, and how a HashSet or Dictionary fixes it — explained with a child's birthday party. First in a short series on .NET performance problems.
+excerpt: Why filtering one list against another grinds to a halt on real-world data, and how a HashSet or Dictionary fixes it, explained with a child's birthday party. First in a short series on .NET performance problems.
 tags:
   - csharp
   - dotnet
@@ -10,7 +10,7 @@ tags:
   - linq
 ---
 
-One of the things I come across a lot in code reviews and performance problems is lists — and often multiple lists — being used where a dictionary would be a far better collection. It's usually caused by not understanding the difference between finding records in a list versus a dictionary or HashSet, and what's commonly known as Big O notation. That sounds like computer-science theory, but by the end of this post you'll have the whole idea from nothing more complicated than a child's birthday party.
+One of the things I come across a lot in code reviews and performance problems is lists (and often multiple lists) being used where a dictionary would be a far better collection. It's usually caused by not understanding the difference between finding records in a list versus a dictionary or HashSet, and what's commonly known as Big O notation. That sounds like computer-science theory, but by the end of this post you'll have the whole idea from nothing more complicated than a child's birthday party.
 
 This is the first in a short series about performance problems I keep meeting in .NET code, explained in plain English. Here's my real-world example.
 
@@ -22,7 +22,7 @@ When code needs to filter a large amount of data, I often find LINQ doing the wo
 var activeCases = caseList.Where(x => x.Status == status);
 ```
 
-This is fine. Even with a large amount of data it's a single pass through `caseList` — one look at each item.
+This is fine. Even with a large amount of data it's a single pass through `caseList`. One look at each item.
 
 The problem starts when there's a second collection involved. Say we have a list of case ids and we want the matching cases:
 
@@ -56,15 +56,15 @@ Imagine you're organising a birthday party for one of your children. They've giv
 
 You go to the first house, knock on the door, and ask whether guest 1 lives there. Whether they do or not, you then go next door and ask about guest 1 again, repeating for every house in the street. When you get to the final house, you go back to the first house and start again with guest 2. And so on for every name on the list.
 
-10 guests, 100 houses: 1,000 door-knocks. Not a lot on modern hardware, and with the small numbers we use as developers everything feels instant. But out in the real world someone has a million rows, and the software gets used in a way where you're checking a million houses for a million guests. Now it's 1,000,000,000,000 operations — a trillion knocks.
+10 guests, 100 houses: 1,000 door-knocks. Not a lot on modern hardware, and with the small numbers we use as developers everything feels instant. But out in the real world someone has a million rows, and the software gets used in a way where you're checking a million houses for a million guests. Now it's 1,000,000,000,000 operations, a trillion knocks.
 
-**Flipping the lists doesn't help.** You might think swapping which collection you loop over would fix it — knock on each door once and ask about every guest while you're there. You'd walk less, but you still ask the same total number of questions: 100 houses × 10 guests is still 1,000. In code, swapping the lists changes the shape of the loops, not the amount of work.
+**Flipping the lists doesn't help.** You might think swapping which collection you loop over would fix it: knock on each door once and ask about every guest while you're there. You'd walk less, but you still ask the same total number of questions: 100 houses × 10 guests is still 1,000. In code, swapping the lists changes the shape of the loops, not the amount of work.
 
 ## Fix One: Learn the Guest List (HashSet)
 
 The first fix comes from noticing what the question actually is. At each door, all you want to know is: *is this child on the guest list, yes or no?*
 
-So learn the list. Walk the street once, and at each door ask the child's name and check it against the names you're holding in your head — one instant check per house. That's 100 doors plus the 10 names you memorised up front: about 110 operations instead of 1,000.
+So learn the list. Walk the street once, and at each door ask the child's name and check it against the names you're holding in your head. One instant check per house. That's 100 doors plus the 10 names you memorised up front: about 110 operations instead of 1,000.
 
 In C#, "learning the list" is a `HashSet`:
 
@@ -74,13 +74,13 @@ var caseIds = caseIdList.ToHashSet();
 var cases = caseList.Where(x => caseIds.Contains(x.CaseId));
 ```
 
-The filtering line barely changes — it's still `Where` and `Contains`. But `Contains` on a `HashSet` doesn't scan; it computes where the value *would* be and looks in exactly that spot. One check, no matter whether the set holds ten ids or ten million.
+The filtering line barely changes. It's still `Where` and `Contains`. But `Contains` on a `HashSet` doesn't scan; it computes where the value *would* be and looks in exactly that spot. One check, no matter whether the set holds ten ids or ten million.
 
-Note which collection changed. `caseList` stays a list — we're walking through it, not searching it. Only the collection on the receiving end of `.Contains()` needs to become the fast one.
+Note which collection changed. `caseList` stays a list. We're walking through it, not searching it. Only the collection on the receiving end of `.Contains()` needs to become the fast one.
 
 ## Fix Two: House Numbers on the List (Dictionary)
 
-Now imagine the guest list your child handed you had the house numbers written next to the names. You don't knock on any doors at all — you go straight to number 42, deliver the invitation, and move on. 10 direct visits instead of 1,000 knocks.
+Now imagine the guest list your child handed you had the house numbers written next to the names. You don't knock on any doors at all. You go straight to number 42, deliver the invitation, and move on. 10 direct visits instead of 1,000 knocks.
 
 That's a `Dictionary`: not just "is this name on the list?" but "take this name and hand me back the thing that goes with it."
 
@@ -90,7 +90,7 @@ var casesById = caseList.ToDictionary(x => x.CaseId);
 var cases = caseIdList.Select(id => casesById[id]);
 ```
 
-The difference between the two fixes is what you get back. A `HashSet` answers yes/no — did this case survive the filter? A `Dictionary` fetches the value — give me the case for this id. If you catch yourself checking membership with a `HashSet` and then searching the list anyway to get the object, you wanted a `Dictionary` all along.
+The difference between the two fixes is what you get back. A `HashSet` answers yes/no: did this case survive the filter? A `Dictionary` fetches the value: give me the case for this id. If you catch yourself checking membership with a `HashSet` and then searching the list anyway to get the object, you wanted a `Dictionary` all along.
 
 ## Building It Isn't Free
 

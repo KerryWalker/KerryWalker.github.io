@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Automating a WSL Ruby Dev Environment with AutoHotKey
-excerpt: How I automated opening four Ubuntu terminal sessions, running the right commands in each, opening VS Code, and launching a browser — all with a single keyboard shortcut.
+excerpt: How I automated opening four Ubuntu terminal sessions, running the right commands in each, opening VS Code, and launching a browser, all with a single keyboard shortcut.
 tags:
   - autohotkey
   - wsl
@@ -14,10 +14,10 @@ I've started working on a Ruby project that runs in WSL. Every time I want to sp
 
 Four Ubuntu tabs in Windows Terminal, all in the same project directory, each running a different process:
 
-1. `bin/sidekiq` — background job processor
-2. `bin/rails server` — the web app server
-3. `foreman start -f Procfile.dev` — runs additional processes like CSS/JS bundling
-4. `code .` — opens VS Code in the project directory
+1. `bin/sidekiq`: background job processor
+2. `bin/rails server`: the web app server
+3. `foreman start -f Procfile.dev`: runs additional processes like CSS/JS bundling
+4. `code .`: opens VS Code in the project directory
 
 Then open `http://localhost:3000` in a browser.
 
@@ -44,7 +44,7 @@ This opens a single Windows Terminal window with four Ubuntu tabs.
     Sleep 500  ; small extra buffer for tabs to settle
 
 
-    ; Tab 1 (already focused) — sidekiq
+    ; Tab 1 (already focused) - sidekiq
     SendText "cd ~/projects/myapp && bin/sidekiq"
     Send "{Enter}"
 

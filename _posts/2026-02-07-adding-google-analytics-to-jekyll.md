@@ -30,7 +30,7 @@ Once your property is created:
 3. Give the stream a name
 4. Click **Create stream**
 
-You'll now see your **Measurement ID** — it looks like `G-XXXXXXXXXX`. Copy this.
+You'll now see your **Measurement ID**. It looks like `G-XXXXXXXXXX`. Copy this.
 
 ## Add It to Your Jekyll Site
 

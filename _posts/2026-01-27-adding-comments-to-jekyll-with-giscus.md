@@ -10,16 +10,16 @@ tags:
 
 Jekyll is a static site generator, so there's no built-in way to handle comments. The traditional solution was Disqus, but it comes with ads and tracking. I wanted something cleaner.
 
-Enter Giscus — a comments system powered by GitHub Discussions. Comments are stored in your repo, there are no ads, and since it uses GitHub authentication, it tends to attract higher quality comments (especially on tech blogs where readers likely have GitHub accounts anyway).
+Enter Giscus, a comments system powered by GitHub Discussions. Comments are stored in your repo, there are no ads, and since it uses GitHub authentication, it tends to attract higher quality comments (especially on tech blogs where readers likely have GitHub accounts anyway).
 
 ## Why Giscus Over Other Options?
 
 There are a few choices for Jekyll comments:
 
-- **Disqus** — widely used but has ads and privacy concerns
-- **Utterances** — uses GitHub Issues (works well, but Issues feel like the wrong place for comments)
-- **Giscus** — uses GitHub Discussions (purpose-built for conversations)
-- **Staticman** — comments become commits to your repo (more complex setup)
+- **Disqus**: widely used but has ads and privacy concerns
+- **Utterances**: uses GitHub Issues (works well, but Issues feel like the wrong place for comments)
+- **Giscus**: uses GitHub Discussions (purpose-built for conversations)
+- **Staticman**: comments become commits to your repo (more complex setup)
 
 I went with Giscus because Discussions feels like the right fit, and the setup is simple.
 
@@ -52,7 +52,7 @@ This allows Giscus to create and manage discussions on your behalf.
    - **Features:** Enable reactions, lazy loading, etc. as you prefer
    - **Theme:** Choose one that matches your site, or use `preferred_color_scheme` to follow the user's system settings
 
-3. Scroll down — giscus.app generates a `<script>` snippet. Copy it.
+3. Scroll down and giscus.app generates a `<script>` snippet. Copy it.
 
 It will look something like this:
 
@@ -136,4 +136,4 @@ Since it's all in GitHub, you have full control over your data.
 
 If you want the comments to match your site's dark/light mode, the `preferred_color_scheme` theme works well. Alternatively, giscus offers specific themes like `light`, `dark`, `dark_dimmed`, and others.
 
-You can also create a custom theme if you want precise control — see the [giscus documentation](https://github.com/giscus/giscus/blob/main/ADVANCED-USAGE.md) for details.
+You can also create a custom theme if you want precise control. See the [giscus documentation](https://github.com/giscus/giscus/blob/main/ADVANCED-USAGE.md) for details.

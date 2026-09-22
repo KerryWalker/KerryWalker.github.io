@@ -12,7 +12,7 @@ tags:
 
 I'm building a family dashboard in Home Assistant. The kind of thing you stick on a tablet in the kitchen and everyone can glance at to see what's happening. First thing on the list: calendars.
 
-We have four Apple accounts and a shared Family calendar. CalDAV handles this nicely — it's the protocol iCloud uses natively, so there's no syncing hacks or third-party bridges involved.
+We have four Apple accounts and a shared Family calendar. CalDAV handles this nicely. It's the protocol iCloud uses natively, so there's no syncing hacks or third-party bridges involved.
 
 ## App-Specific Passwords
 
@@ -32,7 +32,7 @@ In Home Assistant: **Settings → Devices & Services → Add Integration → Cal
 
 HA discovers all calendars on that account automatically. Each becomes a `calendar.*` entity. Repeat for each family member.
 
-The shared Family calendar doesn't have its own Apple ID — it lives under whichever account is the Family Sharing organiser. It'll probably appear under multiple accounts since they're all subscribed. Just pick one instance for the dashboard.
+The shared Family calendar doesn't have its own Apple ID. It lives under whichever account is the Family Sharing organiser. It'll probably appear under multiple accounts since they're all subscribed. Just pick one instance for the dashboard.
 
 ## Atomic Calendar Revive
 

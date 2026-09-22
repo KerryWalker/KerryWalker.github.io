@@ -10,7 +10,7 @@ tags:
   - growatt
 ---
 
-The concentric horseshoe gauge from [Part 2](/2026/02/25/family-dashboard-part-2-energy-gauge.html) looked impressive but it was too much. Five rings crammed together with labels fighting for space — not ideal for a family dashboard where you want a quick glance, not a puzzle.
+The concentric horseshoe gauge from [Part 2](/2026/02/25/family-dashboard-part-2-energy-gauge.html) looked impressive but it was too much. Five rings crammed together with labels fighting for space. Not ideal for a family dashboard where you want a quick glance, not a puzzle.
 
 I use [Solar Assistant](https://solar-assistant.io/) to monitor my Growatt SPH and its dashboard has a simple 2×2 grid of gauges: Load, Solar, Grid, Battery. Each one is its own horseshoe with a single value in the centre. Clean and immediately readable.
 
@@ -32,12 +32,12 @@ Four horseshoe gauges in a 2×2 grid, all on one card using `custom:html-templat
 
 Each gauge is independent with its own arc, value and label. The dynamic behaviour from Part 2 is still there:
 
-- **Solar** — orange, always fills left to right
-- **Load** — blue, always fills left to right
-- **Grid** — red filling left→right when importing, teal filling right→left when exporting. Shows "importing" or "exporting" underneath
-- **Battery** — green filling left→right when charging, orange filling right→left when discharging. Shows battery percentage in pink underneath
+- **Solar**: orange, always fills left to right
+- **Load**: blue, always fills left to right
+- **Grid**: red filling left→right when importing, teal filling right→left when exporting. Shows "importing" or "exporting" underneath
+- **Battery**: green filling left→right when charging, orange filling right→left when discharging. Shows battery percentage in pink underneath
 
-The direction flip is what makes it work. You don't need to read the numbers to know what's happening — the arc direction and colour tell you instantly.
+The direction flip is what makes it work. You don't need to read the numbers to know what's happening. The arc direction and colour tell you instantly.
 
 ## Why Not Native Gauge Cards?
 
@@ -45,13 +45,13 @@ The built-in HA gauge card only supports one entity per card. You could put four
 
 ## The Card
 
-Same approach as before — Jinja2 macros generating SVG paths, but now with a reusable `gauge` macro that takes position, radius, colour, value and label. Much cleaner code than the concentric version.
+Same approach as before: Jinja2 macros generating SVG paths, but now with a reusable `gauge` macro that takes position, radius, colour, value and label. Much cleaner code than the concentric version.
 
 Full YAML: [`cards/energy-quad-gauge.yaml`](https://github.com/KerryWalker/Growatt-Solar-Assistant-Home-Assistant-Dash/blob/main/cards/energy-quad-gauge.yaml)
 
 ## Adapting It
 
-Same as Part 2 — change the five entity IDs and max values at the top of the file. The sign conventions are: battery power positive = charging, grid power positive = importing.
+Same as Part 2: change the five entity IDs and max values at the top of the file. The sign conventions are: battery power positive = charging, grid power positive = importing.
 
 ## Next
 

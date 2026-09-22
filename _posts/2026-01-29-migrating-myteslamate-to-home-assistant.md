@@ -9,7 +9,7 @@ tags:
   - teslamate
 ---
 
-I've been using [MyTeslaMate](https://myteslamate.com) — a hosted TeslaMate service — to track my Tesla's drives, charges, and efficiency. It's a great service, but I wanted to move to a self-hosted setup running on my Home Assistant machine. The main challenge: migrating all my historical data.
+I've been using [MyTeslaMate](https://myteslamate.com), a hosted TeslaMate service, to track my Tesla's drives, charges, and efficiency. It's a great service, but I wanted to move to a self-hosted setup running on my Home Assistant machine. The main challenge: migrating all my historical data.
 
 ## The Setup
 
@@ -37,7 +37,7 @@ MyTeslaMate provides a backup API endpoint. Your backup URL will look something 
 https://app.myteslamate.com/backup/api?token=your-token-here
 ```
 
-You can find this in your MyTeslaMate account settings. Download the file — it'll be a gzipped SQL dump.
+You can find this in your MyTeslaMate account settings. Download the file. It'll be a gzipped SQL dump.
 
 ## Step 3: Prepare the Backup File
 
@@ -51,13 +51,13 @@ Here's the important bit: **the backup will have all database objects owned by `
 
 Open the SQL file in a text editor and do two find-and-replace operations:
 
-**Replace 1 — Database owner:**
+**Replace 1: Database owner**
 - Find: `myteslamate`
 - Replace: `postgres`
 
-**Replace 2 — Your MyTeslaMate user account:**
+**Replace 2: Your MyTeslaMate user account**
 
-Look for a username in the format `user_xxxxxxxx` near the end of the file (in the GRANT statements). This is your personal MyTeslaMate username — the part after `user_` is your account identifier.
+Look for a username in the format `user_xxxxxxxx` near the end of the file (in the GRANT statements). This is your personal MyTeslaMate username. The part after `user_` is your account identifier.
 
 - Find: `user_xxxxxxxx` (your specific username, e.g., `user_tyrbxifpm18`)
 - Replace: `postgres`
@@ -107,7 +107,7 @@ The restore will take a minute or two depending on how much data you have. You'l
 error: invalid command \unrestrict
 ```
 
-This is fine — it's a MyTeslaMate-specific command that PostgreSQL doesn't recognise. Your data is all there.
+This is fine. It's a MyTeslaMate-specific command that PostgreSQL doesn't recognise. Your data is all there.
 
 ## Step 7: Verify the Data
 
@@ -119,7 +119,7 @@ SELECT COUNT(*) FROM public.drives;
 SELECT MIN(start_date), MAX(start_date) FROM public.drives;
 ```
 
-You should see your full history — positions, drives, and the date range of your data.
+You should see your full history: positions, drives, and the date range of your data.
 
 ## Step 8: Restart TeslaMate
 
@@ -133,7 +133,7 @@ If the restore fails with errors about `cube` or `earthdistance`, make sure you 
 
 ### Wrong database user
 
-Check your TeslaMate add-on configuration — it needs to match the database credentials. The add-on config should have:
+Check your TeslaMate add-on configuration. It needs to match the database credentials. The add-on config should have:
 
 - **Database host:** Your PostgreSQL hostname (e.g., `db21ed7f-postgres-latest`)
 - **Database name:** `teslamate`
@@ -151,4 +151,4 @@ The key steps are:
 5. Ignore the `\unrestrict` error at the end
 6. Restart TeslaMate
 
-Once migrated, you've got full local control of your Tesla data — and you can integrate it with Home Assistant automations, custom Grafana dashboards, and whatever else you want to build.
+Once migrated, you've got full local control of your Tesla data. You can integrate it with Home Assistant automations, custom Grafana dashboards, and whatever else you want to build.

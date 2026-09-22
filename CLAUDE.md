@@ -40,9 +40,9 @@ Content in Markdown...
 
 - British English, first person, practical tone. Posts open with the setup/problem, use short `##` sections, and end with a summary.
 - No em-dashes (—). They read as AI-written. Split the sentence with a full stop, or use a colon, brackets, or a comma where the clause is genuinely parenthetical. Never leave a comma splice behind. Same for en-dash ranges: "5 to 10 watts", not "5–10 watts".
-- Each section should answer a question the reader already has. If the question hasn't been raised yet, raise it before answering it. (Loosely SCQA — situation, complication, question, answer — but keep the answer late: the reveal is what makes people read on, so don't lead with it the way a work memo would.)
+- Each section should answer a question the reader already has. If the question hasn't been raised yet, raise it before answering it. (Loosely SCQA: situation, complication, question, answer. But keep the answer late, because the reveal is what makes people read on, so don't lead with it the way a work memo would.)
 - Round numbers in prose ("around 20,000 files"), not exact counts ("19,388 files"). Keep exact values only where precision is the point (prices, config values, measurements).
-- Drafts are flagged with `published: false` in front matter — there is no `_drafts/` folder. Remove the flag (or set `true`) to publish.
+- Drafts are flagged with `published: false` in front matter. There is no `_drafts/` folder. Remove the flag (or set `true`) to publish.
 - Home automation/energy posts carry a `pillar:` field (`energy`, `ev`, `dashboards`) that feeds the index page at `home-automation.md`. Dev posts have no pillar.
 
 ## Architecture

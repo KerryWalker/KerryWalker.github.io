@@ -9,7 +9,7 @@ tags:
   - keychron
 ---
 
-I use Spotify a lot around the house, and I got tired of the little dance you have to do every time you want to switch audio to a specific speaker — open Spotify, find the Connect icon, click it, wait for the device list, then click the right speaker. I wanted one button on my keyboard to do the whole thing.
+I use Spotify a lot around the house, and I got tired of the little dance you have to do every time you want to switch audio to a specific speaker: open Spotify, find the Connect icon, click it, wait for the device list, then click the right speaker. I wanted one button on my keyboard to do the whole thing.
 
 ## The Setup
 
@@ -17,7 +17,7 @@ I'm on Windows 11 with a [Keychron V6 Max ISO](https://amzn.to/4kugJt6) keyboard
 
 ## Why Not Just Use a Keyboard Shortcut?
 
-Spotify doesn't have a keyboard shortcut for the Connect to Device panel. I checked the [official shortcuts list](https://support.spotify.com/us/article/keyboard-shortcuts/) — it's not there. So this has to be done with UI automation.
+Spotify doesn't have a keyboard shortcut for the Connect to Device panel. I checked the [official shortcuts list](https://support.spotify.com/us/article/keyboard-shortcuts/) and it's not there. So this has to be done with UI automation.
 
 ## The Approach: ImageSearch in AutoHotKey
 
@@ -34,8 +34,8 @@ AutoHotKey's `ImageSearch` can locate a small screenshot on screen and click it.
 
 You'll need two small screenshots saved in the same folder as your AHK script:
 
-- **connect_button.png** — a tight crop of the Connect/Devices icon from Spotify's bottom playback bar. Use Win+Shift+S to snip it.
-- **office.png** — a tight crop of the speaker name from the device list. Click the Connect icon first to open the panel, then snip the name.
+- **connect_button.png**: a tight crop of the Connect/Devices icon from Spotify's bottom playback bar. Use Win+Shift+S to snip it.
+- **office.png**: a tight crop of the speaker name from the device list. Click the Connect icon first to open the panel, then snip the name.
 
 Keep the crops tight with minimal background. If Spotify's background changes (different album art, dark mode toggle) a loose crop with too much background will break the match.
 
@@ -80,7 +80,7 @@ Keep the crops tight with minimal background. If Spotify's background changes (d
 }
 ```
 
-The hotkey here is Ctrl+Alt+D — you can change this to whatever you like.
+The hotkey here is Ctrl+Alt+D. You can change this to whatever you like.
 
 ## Speeding Up ImageSearch
 
@@ -92,7 +92,7 @@ This made it feel almost instant.
 
 ## Why 350ms Sleep?
 
-The device panel appears visually almost immediately, but `ImageSearch` needs the pixels to be fully rendered. During a fade-in animation the colours won't match your screenshot exactly. 350ms was the sweet spot on my machine — anything lower and it couldn't find the image reliably. You might need to adjust this depending on your system.
+The device panel appears visually almost immediately, but `ImageSearch` needs the pixels to be fully rendered. During a fade-in animation the colours won't match your screenshot exactly. 350ms was the sweet spot on my machine. Anything lower and it couldn't find the image reliably. You might need to adjust this depending on your system.
 
 The `*50` parameter in `ImageSearch` is the colour tolerance (0-255). If matching is unreliable, try increasing it to `*80` or `*100`.
 
@@ -100,7 +100,7 @@ The `*50` parameter in `ImageSearch` is the colour tolerance (0-255). If matchin
 
 The V6 Max supports macros through the [Keychron Launcher](https://launcher.keychron.com). Connect the keyboard via USB, open the Launcher in Chrome or Edge, then:
 
-1. Go to **MACROS** and pick an unused slot (check which ones are already in use first — if a key shows M0, M1 etc. in the keymap view, that slot is taken)
+1. Go to **MACROS** and pick an unused slot (check which ones are already in use first: if a key shows M0, M1 etc. in the keymap view, that slot is taken)
 2. Enter the key combo: `{KC_LCTL,KC_LALT,KC_D}`
 3. Save
 4. Go to **KEYMAP**, click the key you want to assign it to, then select the macro from the **MACRO** section
