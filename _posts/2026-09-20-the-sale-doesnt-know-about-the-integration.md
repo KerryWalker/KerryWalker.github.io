@@ -116,11 +116,11 @@ If the partner API is having a bad afternoon, the order still completes. The alt
 
 That won't always be the right call. Sometimes a failed handler *should* stop everything. But it's a decision you have to make on purpose, because the default (an exception bubbling up out of a handler nobody knew was running) is the worst of both worlds.
 
-## The Seam With the Old Code
+## Where It Meets the Old Code
 
-One honest wrinkle, because this is a real codebase rather than a sample.
+One bit of this isn't pretty, because it's a real codebase and not a sample.
 
-The dispatcher is a modern service, resolved from the DI container. The order-completion code is not. It predates the container by a long way, and it's synchronous. So at that particular join, the old code reaches out and fetches the dispatcher rather than being handed it, and waits on the async call rather than awaiting it.
+The dispatcher is a modern service, resolved from the DI container. The order-completion code is not. It predates the container by a long way, and it's synchronous. So where the two meet, the old code reaches out and fetches the dispatcher rather than being handed it, and waits on the async call rather than awaiting it.
 
 Neither is how I'd write it fresh. Both are what letting the old code stay exactly as it is actually costs. The alternative was to modernise a ten-year-old order pipeline before I could send a single message, which wasn't the job I'd been given. Every pattern is easier in a new codebase, and almost nobody gets to use one.
 
