@@ -13,16 +13,16 @@ The dimmer on our upstairs landing gave up. The dimming still worked, the push o
 
 It took rather longer than that. Two things got in the way, and both are worth writing down, because nearly every answer I found online was wrong for this particular circuit.
 
-**Before anything else.** I'm a time-served electrical engineer, so I'm competent to do this work and to judge when a circuit is safe to change. If you aren't, get a qualified electrician in — this is mains voltage, the wiring here is non-standard, and half the advice online about it is wrong. Whoever does it: isolate the lighting circuit at the consumer unit and prove dead at both boxes before touching a wire.
+**Before anything else.** I'm a time-served electrical engineer, so I'm competent to do this work and to judge when a circuit is safe to change. If you aren't, get a qualified electrician in. This is mains voltage, the wiring here is non-standard, and half the advice online about it is wrong. Whoever does it: isolate the lighting circuit at the consumer unit and prove dead at both boxes before touching a wire.
 
 ## What's actually in the wall
 
 - A UK upstairs/downstairs 2-way circuit, with **no neutral** at either switch.
-- Downstairs, a **2-gang** switch — one gang for the stairs, one for the hall. Not being replaced, not being disabled.
+- Downstairs, a **2-gang** switch, one gang for the stairs and one for the hall. Not being replaced, not being disabled.
 - Upstairs, the dimmer position, with two cables. One from above is the switched live to the lamp: a red core someone had extended with a bit of blue in a connector, so it's marked as the return. One from below runs to the downstairs switch.
 - The link cable between the two switches is **2-core**, red and black. Not 3-core.
 
-That last point is the one everything hinges on. It's an ordinary 2-way done the conversion way: permanent live into COM downstairs, switched live to the lamp at COM upstairs, two strappers between L1 and L2 at each end. Testing agreed — at the upstairs box the strapper read 240 V to earth, COM read 0 V.
+That last point is the one everything hinges on. It's an ordinary 2-way done the conversion way: permanent live into COM downstairs, switched live to the lamp at COM upstairs, two strappers between L1 and L2 at each end. Testing agreed. At the upstairs box the strapper read 240 V to earth and COM read 0 V.
 
 ## Why the obvious wiring doesn't work
 
@@ -30,13 +30,13 @@ A smart dimmer needs *permanent* power at L. With a 2-core link wired as a norma
 
 Three suggestions I was given, and why each fails:
 
-- **Join both strappers into L and set the module to `three_way` mode.** If both cores land on L, the module has power whichever way the downstairs switch is thrown — so it can never tell that anything moved. The light just stays on.
+- **Join both strappers into L and set the module to `three_way` mode.** If both cores land on L, the module has power whichever way the downstairs switch is thrown, so it can never tell that anything moved. The light just stays on.
 - **Pull a third core through.** Not without taking the stairs wall apart.
 - **Replace the downstairs switch with a wireless Zigbee button, or bypass it.** It's a 2-gang. The other gang has a job to do.
 
 ## The wiring that does work
 
-Stop using the two cores as strappers. Make one a **permanent live** up to the module, and the other a **switch signal** into the module's S terminal. The downstairs gang stays exactly where it is and behaves like a normal toggle — it just switches a signal now, rather than the mains feed to the lamp.
+Stop using the two cores as strappers. Make one a **permanent live** up to the module, and the other a **switch signal** into the module's S terminal. The downstairs gang stays exactly where it is and behaves like a normal toggle. It just switches a signal now, rather than the mains feed to the lamp.
 
 **Downstairs, stairs gang only:**
 
@@ -58,15 +58,15 @@ There's a catch, and it turned into the second half of the afternoon: the SM323 
 
 Two things that cost me a while:
 
-- Pressing the **knob** five times does not enter pairing. It switches the light on and off five times and convinces you the module is broken. Pull the knob off the spindle and press the small **RESET** button five times instead — the lamp flashes twice and it joins.
+- Pressing the **knob** five times does not enter pairing. It switches the light on and off five times and convinces you the module is broken. Pull the knob off the spindle and press the small **RESET** button five times instead. The lamp flashes twice and it joins.
 - If you've been hammering the breaker trying to reset it, it can sit there flashing at you. Leave the power off for a minute, then try again.
 
 ## The setting that isn't there
 
 Paired, working, and nowhere to change the switch type. I went through the lot:
 
-- **Generic Zigbee Dimmer** — on, off, level. Nothing else.
-- **BirdsLikeWires Samotech SM323 Dimmer Module** (v1.10) — a good driver, but its preferences are electrical measurement, max level and logging. No switch type.
+- **Generic Zigbee Dimmer**: on, off, level. Nothing else.
+- **BirdsLikeWires Samotech SM323 Dimmer Module** (v1.10): a good driver, but its preferences are electrical measurement, max level and logging. No switch type.
 - A "Basic Z-Wave/Zigbee Tool", a Maker API `setDriver` URL, a config entity in Home Assistant. The Z-Wave tool is Z-Wave. Maker API doesn't expose preferences. The Hubitat to Home Assistant integration relays commands and attributes, not settings. All dead ends.
 
 I wasn't missing a drop-down. There genuinely isn't one.
@@ -77,7 +77,7 @@ The reason is that the SM323 v2 is a **Sunricher**-based module, and the switch 
 - Manufacturer code `0x1224`
 - Values: `0` = push_button, `1` = normal_on_off, `2` = three_way
 
-Zigbee2MQTT exposes that as `external_switch_type` and you get it for free. Hubitat has no idea it exists. (Worth noting the converter only attaches this to the **v2** — the original SM323 doesn't have it at all.)
+Zigbee2MQTT exposes that as `external_switch_type` and you get it for free. Hubitat has no idea it exists. (Worth noting the converter only attaches this to the **v2**. The original SM323 doesn't have it at all.)
 
 So I wrote a throwaway driver to write the attribute directly.
 
@@ -139,15 +139,15 @@ That should have been the end of it, except for something I'd been ignoring for 
 
 The landing lamp is halogen, thirty-odd watts, and that turns out to be why the no-neutral setup has been so well behaved. A no-neutral dimmer has to keep itself alive by leaking a trickle of current through the lamp. Halogen just soaks that up as a bit of extra warmth and says nothing.
 
-An LED driver does not. It sees that trickle as power and does one of the classic things: glows faintly when it's supposed to be off, flickers at low brightness, pops on and off, or refuses to start at all if the total load is under the module's minimum — usually somewhere around 5 to 10 watts. A single 5 W lamp sits right on that line.
+An LED driver does not. It sees that trickle as power and does one of the classic things: glows faintly when it's supposed to be off, flickers at low brightness, pops on and off, or refuses to start at all if the total load is under the module's minimum, usually somewhere around 5 to 10 watts. A single 5 W lamp sits right on that line.
 
-Which explains something that has been following me round the house. I've got two more of these dimmers in other rooms, both no-neutral, and both hopeless with LEDs. I'd assumed I kept buying bad bulbs. I wasn't — it was the wiring.
+Which explains something that has been following me round the house. I've got two more of these dimmers in other rooms, both no-neutral, and both hopeless with LEDs. I'd assumed I kept buying bad bulbs. I wasn't. It was the wiring.
 
 Upstairs I had a spare core going begging, so the fix was straightforward: bring a neutral down, drop the L to N link, put the spare core into N, and sleeve it blue. With a real neutral the module powers itself properly from L and N, and the lamp output becomes an ordinary trailing-edge dimmed feed. At that point whether an LED dims nicely is a question about the bulb, not about the circuit.
 
 Where there's no spare core, the fallbacks in order:
 
-1. **A bypass at the fitting.** Samotech sell one — an RC network wired across live and neutral in the rose or the fitting. It gives the module a path to feed itself that doesn't run through the LED driver, and it usually cures the glow and the flicker outright. One per circuit, not one per lamp.
+1. **A bypass at the fitting.** Samotech sell one, an RC network wired across live and neutral in the rose or the fitting. It gives the module a path to feed itself that doesn't run through the LED driver, and it usually cures the glow and the flicker outright. One per circuit, not one per lamp.
 2. **More load.** Several downlights together, say 15 to 20 watts of dimmable LED, often clear the minimum between them. One 5 W lamp never will.
 3. **Choose the lamp carefully.** Anything sold as trailing-edge or smart-dimmer compatible copes better with the leakage. On its own it's the least reliable fix, but it helps alongside the others.
 
@@ -163,7 +163,7 @@ And the knob doesn't pair it. The reset button does.
 
 ## References
 
-- [Zigbee2MQTT Samotech definitions](https://github.com/Koenkk/zigbee-herdsman-converters/blob/master/src/devices/samotech.ts) — SM323_v2 pulls in the Sunricher external switch type, v1 doesn't
-- [Zigbee2MQTT Sunricher library](https://github.com/Koenkk/zigbee-herdsman-converters/blob/master/src/lib/sunricher.ts) — attribute `0x8803`, manufacturer code `0x1224`, value map
+- [Zigbee2MQTT Samotech definitions](https://github.com/Koenkk/zigbee-herdsman-converters/blob/master/src/devices/samotech.ts). SM323_v2 pulls in the Sunricher external switch type, v1 doesn't.
+- [Zigbee2MQTT Sunricher library](https://github.com/Koenkk/zigbee-herdsman-converters/blob/master/src/lib/sunricher.ts). Attribute `0x8803`, manufacturer code `0x1224`, and the value map.
 - [BirdsLikeWires Hubitat drivers](https://github.com/birdslikewires/hubitat)
-- [Samotech SM323 product page](https://www.samotech.co.uk/products/zigbee-dimmer-switch/) — including the power cycle requirement after a mode change
+- [Samotech SM323 product page](https://www.samotech.co.uk/products/zigbee-dimmer-switch/), including the power cycle requirement after a mode change.
