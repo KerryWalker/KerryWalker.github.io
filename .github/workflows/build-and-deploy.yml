@@ -1,0 +1,66 @@
+name: Build and deploy
+
+on:
+  # Rebuild whenever something is pushed
+  push:
+    branches: [main]
+
+  # Rebuild every morning so that posts dated today become visible.
+  # Jekyll leaves future-dated posts out of the build, so a post only
+  # appears once a build runs on or after its date.
+  # 07:00 UTC = 08:00 BST in summer, 07:00 GMT in winter.
+  # GitHub often runs scheduled jobs late, so don't expect it on the dot.
+  schedule:
+    - cron: '0 7 * * *'
+
+  # Lets you trigger a build by hand from the Actions tab
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+# Let a running deploy finish rather than cancelling it
+concurrency:
+  group: pages
+  cancel-in-progress: false
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Set up Ruby
+        uses: ruby/setup-ruby@v1
+        with:
+          ruby-version: '3.3'
+          # The Hydeout theme gemspec asks for bundler ~> 2.1
+          bundler: '2.7.2'
+
+      - name: Install gems
+        run: bundle install
+
+      - name: Configure Pages
+        uses: actions/configure-pages@v5
+
+      - name: Build site
+        run: bundle exec jekyll build
+        env:
+          JEKYLL_ENV: production
+
+      - name: Upload artifact
+        uses: actions/upload-pages-artifact@v3
+
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4

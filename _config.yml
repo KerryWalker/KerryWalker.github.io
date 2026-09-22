@@ -1,6 +1,11 @@
 # Dependencies
 markdown:         kramdown
 highlighter:      rouge
+timezone:         Europe/London
+                  # Post dates are read in UK time rather than UTC, so a post
+                  # dated today goes live at midnight here, not at 1am in summer.
+                  # future: false is Jekyll's default, so a post dated ahead is
+                  # left out of the build until a build runs on or after its date.
 # Setup
 title:            Kerry Walker
 tagline:          'Random Stuff'
