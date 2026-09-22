@@ -1,10 +1,9 @@
 ---
 layout: post
-published: false
 title: The Sale Doesn't Know About the Integration
 pillar: patterns
 series: design-patterns
-excerpt: I needed new things to happen when old things happened, without editing the old things. Domain events and the Observer pattern, in code that had been running for twenty years before I turned up with an idea.
+excerpt: I needed new things to happen when old things happened, without editing the old things. Domain events and the Observer pattern, in code that had been running for ten years before I turned up with an idea.
 tags:
   - design-patterns
   - csharp
@@ -123,7 +122,7 @@ One honest wrinkle, because this is a real codebase rather than a sample.
 
 The dispatcher is a modern service, resolved from the DI container. The order-completion code is not. It predates the container by a long way, and it's synchronous. So at that particular join, the old code reaches out and fetches the dispatcher rather than being handed it, and waits on the async call rather than awaiting it.
 
-Neither is how I'd write it fresh. Both are what letting the old code stay exactly as it is actually costs. The alternative was to modernise a twenty-year-old order pipeline before I could send a single message, which wasn't the job I'd been given. Every pattern is easier in a new codebase, and almost nobody gets to use one.
+Neither is how I'd write it fresh. Both are what letting the old code stay exactly as it is actually costs. The alternative was to modernise a ten-year-old order pipeline before I could send a single message, which wasn't the job I'd been given. Every pattern is easier in a new codebase, and almost nobody gets to use one.
 
 ## What It Bought
 
