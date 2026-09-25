@@ -1,6 +1,6 @@
 ---
 layout: post
-title: The Sale Doesn't Know About the Integration
+title: "The Sale Doesn't Know About the Integration: The Observer Pattern"
 pillar: patterns
 series: design-patterns
 excerpt: I needed new things to happen when old things happened, without editing the old things. Domain events and the Observer pattern, in code that had been running for ten years before I turned up with an idea.

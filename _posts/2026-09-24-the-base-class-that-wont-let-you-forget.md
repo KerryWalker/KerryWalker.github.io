@@ -1,6 +1,6 @@
 ---
 layout: post
-title: The Base Class That Won't Let You Forget
+title: "The Base Class That Won't Let You Forget: Template Method"
 pillar: patterns
 series: design-patterns
 excerpt: Two checks that every event handler had to do before it did anything, written out by hand in each one, until somebody wrote a handler and missed them. The Template Method pattern, and why it isn't the same as putting shared code in a base class.
