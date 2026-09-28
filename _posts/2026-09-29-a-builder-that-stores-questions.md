@@ -4,7 +4,7 @@ published: false
 title: A Builder That Stores Questions, Not Answers
 pillar: patterns
 series: design-patterns
-excerpt: Declaring a menu where every entry might be hidden by a permission, a config setting or a feature flag. A fluent builder, and the decision that matters more than the chaining: storing how to find out rather than what the answer was.
+excerpt: "Declaring a menu where every entry might be hidden by a permission, a config setting or a feature flag. A fluent builder, and the decision that matters more than the chaining: storing how to find out rather than what the answer was."
 tags:
   - design-patterns
   - csharp
