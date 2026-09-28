@@ -47,9 +47,23 @@ jobs:
         uses: actions/configure-pages@v5
 
       - name: Build site
-        run: bundle exec jekyll build
+        run: |
+          set -o pipefail
+          bundle exec jekyll build 2>&1 | tee "$RUNNER_TEMP/build.log"
         env:
           JEKYLL_ENV: production
+
+      # A YAML error in front matter does NOT fail a Jekyll build. Jekyll
+      # reports it, throws the whole front matter block away, and renders the
+      # file anyway, so published: false is ignored and the draft goes live at
+      # a mangled URL with no layout. Catch it here instead.
+      - name: Fail if any front matter did not parse
+        run: |
+          if grep -q "YAML Exception" "$RUNNER_TEMP/build.log"; then
+            echo "::error::Front matter failed to parse. Jekyll ignored it, so this file would publish regardless of published: false."
+            grep "YAML Exception" "$RUNNER_TEMP/build.log"
+            exit 1
+          fi
 
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
