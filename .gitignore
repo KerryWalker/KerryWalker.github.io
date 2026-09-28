@@ -40,3 +40,9 @@ validation-report.json
 # Folders to ignore
 node_modules
 /.vs
+
+# Private working notes (references internal code — never publish/commit)
+_dev-notes/
+
+# Local build only — GitHub Pages builds with its own toolchain
+Gemfile.lock
