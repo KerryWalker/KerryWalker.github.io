@@ -1,6 +1,5 @@
 ---
 layout: post
-published: false
 title: "The Menu That Hides Itself: The Composite Pattern"
 pillar: patterns
 series: design-patterns

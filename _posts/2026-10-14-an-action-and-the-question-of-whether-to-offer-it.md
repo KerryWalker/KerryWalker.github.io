@@ -1,6 +1,5 @@
 ---
 layout: post
-published: false
 title: "An Action, and the Question of Whether to Offer It: The Command Pattern"
 pillar: patterns
 series: design-patterns

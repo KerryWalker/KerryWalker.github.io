@@ -1,6 +1,5 @@
 ---
 layout: post
-published: false
 title: "One Endpoint for Everything: The Adapter Pattern"
 pillar: patterns
 series: design-patterns

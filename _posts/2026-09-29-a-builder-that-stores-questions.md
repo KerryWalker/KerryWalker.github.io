@@ -1,6 +1,5 @@
 ---
 layout: post
-published: false
 title: A Builder That Stores Questions, Not Answers
 pillar: patterns
 series: design-patterns
