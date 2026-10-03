@@ -1,6 +1,7 @@
 ---
 layout: post
 title: Adding Comments to a Jekyll Blog with Giscus
+pillar: jekyll
 excerpt: How to set up Giscus for comments on a static Jekyll site, using GitHub Discussions as the backend.
 tags:
   - jekyll

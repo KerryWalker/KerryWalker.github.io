@@ -2,6 +2,7 @@
 layout: post
 published: true
 title: Switching from Google Analytics to Cloudflare Web Analytics
+pillar: jekyll
 excerpt: Google Analytics wasn't showing any data thanks to ad blockers. Cloudflare Web Analytics is a better fit if your domain is already on Cloudflare.
 tags:
   - jekyll

@@ -1,8 +1,8 @@
 ---
 layout: post
 title: "Lists, LINQ Where and Dictionaries: .NET Performance in Plain English"
-pillar: performance
-excerpt: Why filtering one list against another grinds to a halt on real-world data, and how a HashSet or Dictionary fixes it, explained with a child's birthday party. First in a short series on .NET performance problems.
+pillar: dotnet
+excerpt: Why filtering one list against another grinds to a halt on real-world data, and how a HashSet or Dictionary fixes it, explained with a child's birthday party. First in a short series on .NET things that are easy to get wrong.
 tags:
   - csharp
   - dotnet
@@ -12,7 +12,7 @@ tags:
 
 One of the things I come across a lot in code reviews and performance problems is lists (and often multiple lists) being used where a dictionary would be a far better collection. It's usually caused by not understanding the difference between finding records in a list versus a dictionary or HashSet, and what's commonly known as Big O notation. That sounds like computer-science theory, but by the end of this post you'll have the whole idea from nothing more complicated than a child's birthday party.
 
-This is the first in a short series about performance problems I keep meeting in .NET code, explained in plain English. Here's my real-world example.
+This is the first in a short series about .NET things that are easy to get wrong, explained in plain English. Here's my real-world example.
 
 ## The Real-World Example
 

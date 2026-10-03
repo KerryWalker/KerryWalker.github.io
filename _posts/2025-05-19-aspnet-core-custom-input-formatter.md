@@ -1,6 +1,7 @@
 ---
 layout: post
 title: "One Endpoint, Many Payload Shapes: Custom Input Formatters in ASP.NET Core"
+pillar: dotnet
 excerpt: A partner posts everything to one endpoint, and a field buried in the payload decides what the rest of it means. Model binding can't help you, so you write the bit that can.
 tags:
   - csharp

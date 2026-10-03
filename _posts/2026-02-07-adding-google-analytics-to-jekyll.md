@@ -1,6 +1,7 @@
 ---
 layout: post
 title: Adding Google Analytics to a Jekyll Blog on GitHub Pages
+pillar: jekyll
 excerpt: A quick guide to setting up Google Analytics 4 on a Jekyll site using the Hydeout theme.
 tags:
   - jekyll

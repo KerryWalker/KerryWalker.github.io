@@ -19,22 +19,22 @@ Most developers are already using half the Gang of Four catalogue without knowin
 {% for post in pattern_posts %}  <li><a href="{{ post.url | relative_url }}">{{ post.title }}</a></li>
 {% endfor %}</ol>
 
-## .NET performance in plain English
+## The .NET bits
 
-Why the code feels instant on your machine and falls over on real data, explained without the computer science.
+The things that are easy to get wrong, explained without the computer science.
 
-{% assign performance_posts = site.posts | where: "pillar", "performance" | sort: "date" %}
+{% assign dotnet_posts = site.posts | where: "pillar", "dotnet" | sort: "date" %}
 <ul>
-{% for post in performance_posts %}  <li><a href="{{ post.url | relative_url }}">{{ post.title }}</a></li>
+{% for post in dotnet_posts %}  <li><a href="{{ post.url | relative_url }}">{{ post.title }}</a></li>
 {% endfor %}</ul>
 
-## Gotchas
+## SQL Server
 
 The ones that look right, run clean, and quietly give you the wrong answer.
 
-{% assign gotcha_posts = site.posts | where: "pillar", "gotchas" | sort: "date" %}
+{% assign sql_posts = site.posts | where: "pillar", "sql" | sort: "date" %}
 <ul>
-{% for post in gotcha_posts %}  <li><a href="{{ post.url | relative_url }}">{{ post.title }}</a></li>
+{% for post in sql_posts %}  <li><a href="{{ post.url | relative_url }}">{{ post.title }}</a></li>
 {% endfor %}</ul>
 
 ## Building this site

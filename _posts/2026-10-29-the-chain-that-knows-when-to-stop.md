@@ -1,6 +1,5 @@
 ---
 layout: post
-published: false
 title: "The Chain That Knows When to Stop: Chain of Responsibility"
 pillar: patterns
 series: design-patterns
@@ -107,7 +106,7 @@ if (searchResult?.Success ?? false)
 }
 ```
 
-Found it, done, nobody else gets a go. The invoice searcher at the end of the line never runs if the customer searcher at position two came back with something. That isn't an optimisation, it's the defining property. A chain where every link runs regardless is not this pattern, and I'll come back to that.
+Found it, done, nobody else gets a go. The invoice searcher at the end of the line never runs if the customer searcher at position two came back with something. That isn't an optimisation, it's the defining property. A chain whose links are steps rather than candidates is not this pattern, and I'll come back to that.
 
 ## A link can be switched off
 
@@ -151,4 +150,5 @@ Keep the "do I handle this" test cheap, because it is only ever a guess, and let
 
 One thing I deliberately left hanging. Everything above turns on a link being allowed to stop the chain, and I said I would come back to it.
 
-In another codebase I wrote something that looks almost identical. A `SetNext` method, a field holding the next one, objects wired in a line at startup. You could put the two files side by side and struggle to tell them apart. Nothing in it can stop, every stage runs, and it is not this pattern at all. That one is next.
+In another codebase I wrote something that looks almost identical. A `SetNext` method, a field holding the next one, objects wired in a line at startup. You could put the two files side by side and struggle to tell them apart. But none of its links is an alternative to any other. They all take a turn, in order, each one working on whatever the last one produced, and it is not this pattern at all. That one is next.
+
