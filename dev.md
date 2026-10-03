@@ -19,7 +19,7 @@ Most developers are already using half the Gang of Four catalogue without knowin
 {% for post in pattern_posts %}  <li><a href="{{ post.url | relative_url }}">{{ post.title }}</a></li>
 {% endfor %}</ol>
 
-## The .NET bits
+## .NET
 
 The things that are easy to get wrong, explained without the computer science.
 
