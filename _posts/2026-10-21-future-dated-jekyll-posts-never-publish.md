@@ -1,6 +1,5 @@
 ---
 layout: post
-published: false
 title: Your future-dated Jekyll post is never going to publish
 pillar: jekyll
 excerpt: Date a post ahead on GitHub Pages and it doesn't appear late, it never appears at all. Two sensible behaviours combining into one silent trap, and the scheduled rebuild that fixes it.
@@ -103,13 +102,13 @@ Now a date means what it looks like it means.
 
 ## What you get, and what you don't
 
-Once it's in, a post dated ahead goes live on its date with nothing from you. Write four on a wet afternoon, date them a week apart, push once, and that's a month sorted.
+Once it is in, a date in a filename means what it looks like it means. Put Tuesday on something and it turns up on Tuesday, whether or not you happen to be at a computer that morning. That is the whole of it. The point was never to do anything clever with scheduling, it was to stop the thing I had already written from disappearing into a gap between two tools.
 
 Two things not to expect:
 
 - **Cron is not remotely punctual.** GitHub runs scheduled jobs when it has spare capacity, and "when it has capacity" turns out to mean a lot later than you asked. Mine is set for 07:00 UTC and the three runs after I switched it on started at 13:49, 13:23 and 14:17. That is six to seven hours late, every time, consistently. Fine for a blog, useless if you need something on the hour. Part of the reason is that I picked a round number: on-the-hour schedules are the busiest, so if you want yours nearer the time you asked for, pick an odd minute like `17 5 * * *` rather than `0 7 * * *`.
 
-- **Scheduled workflows switch themselves off.** Sixty days without activity in the repo and GitHub disables the schedule and emails you about it. Any push turns it back on. If you're pushing regularly you'll never see it, but it's a nasty surprise if you're relying on a queue draining while you're away.
+- **Scheduled workflows switch themselves off.** Sixty days without activity in the repo and GitHub disables the schedule and emails you about it. Any push turns it back on. If you are pushing regularly you will never see it, but it is a nasty surprise if you have something dated ahead and have not touched the repo for a couple of months.
 
 ## In short
 

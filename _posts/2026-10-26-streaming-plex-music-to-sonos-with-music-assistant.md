@@ -1,6 +1,5 @@
 ---
 layout: post
-published: false
 title: Streaming Plex Music to Sonos from Home Assistant Without Remote Access
 excerpt: I wanted to play music from my NAS to my Sonos speakers, controlled from Home Assistant, all locally. The documented method can't do it. Here's why, and the setup that can.
 tags:
@@ -117,6 +116,9 @@ Once Music Assistant was playing, I went back and tested whether it needed any o
 That confirms it. Music Assistant's Plex provider is a completely separate connection: it authenticates to Plex directly on the local IP and port, reads the library, and serves the stream to the Sonos itself. The Home Assistant Plex integration was never part of its path, and the Plex-for-Sonos service isn't involved at all. The Music Assistant server also runs independently of Home Assistant, which is why a Home Assistant restart doesn't interrupt playback.
 
 You can undo the Plex network changes made while chasing the 800, the custom access URL in particular, but leave your machine's IP (or the subnet) in the "allowed without auth" list, because Music Assistant uses that for local authentication.
+
+That entry is worth being deliberate about. It means anything on the addresses you list reaches Plex without logging in, so a `/24` trusts every device on your network: guests, the smart TV, whatever your kids have plugged in. On a home network that is usually a fine trade for not typing a password, but Music Assistant only needs one address. Listing the single IP of the machine running it, rather than the whole subnet, gets you the same result and trusts a great deal less.
+
 
 ## The Final Setup
 
