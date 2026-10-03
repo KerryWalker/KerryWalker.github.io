@@ -45,12 +45,3 @@ Jekyll and GitHub Pages bits, mostly written up because I'd forget them otherwis
 <ul>
 {% for post in jekyll_posts %}  <li><a href="{{ post.url | relative_url }}">{{ post.title }}</a></li>
 {% endfor %}</ul>
-
-## Everything else
-
-The ones that don't belong to a series: .NET and ASP.NET Core bits, Git, and whatever else was worth writing down at the time.
-
-{% assign dev_posts = site.posts | where: "pillar", "dev" | sort: "date" %}
-<ul>
-{% for post in dev_posts %}  <li><a href="{{ post.url | relative_url }}">{{ post.title }}</a></li>
-{% endfor %}</ul>
