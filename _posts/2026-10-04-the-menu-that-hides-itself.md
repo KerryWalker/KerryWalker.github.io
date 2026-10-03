@@ -92,7 +92,7 @@ Composite is lovely right up until leaves and branches genuinely need to behave 
 
 Ours is already a bit awkward. A leaf needs a URL to navigate to. A branch doesn't, and shouldn't have one. Both have the property, because they're the same class, and the visibility logic ends up checking whether a URL is set as a proxy for "am I a leaf". That works, and it's not what you'd design from scratch.
 
-You can see the strain in that `Visible` property. Before it gets to the recursion there is a chain of separate `if` statements, each checking a different property, working through the combinations of whether there is a URL, whether there is a rule, and whether there are any children. It finishes with a comment reading *"just return true and if it shouldn't be showing figure out what I missed"*. That comment is honest and it's also a signal. Rules that pile up as special cases with a shrug at the bottom want turning into something you can state in one line, and I haven't got round to it.
+You can see the strain in that `Visible` property. Before it gets to the recursion there is a chain of separate `if` statements, each checking a different property, working through the combinations of whether there is a URL, whether there is a rule, and whether there are any children. It finishes with a comment reading *"just return true and if it shouldn't be showing figure out what I missed"*. That comment is honest and it's also a signal. Rules that pile up as special cases with a shrug at the bottom want turning into something you can state in one line.
 
 ## In short
 

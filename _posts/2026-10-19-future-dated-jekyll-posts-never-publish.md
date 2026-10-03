@@ -93,7 +93,7 @@ The `bundler: '2.7.2'` line is worth a word. My theme's gemspec asks for bundler
 
 ## Dates are read in UTC unless you say otherwise
 
-One more thing that will make a post appear at an odd time. Jekyll reads dates in UTC by default, so in British Summer Time a post dated today technically becomes eligible at 1am rather than midnight. Not a disaster, but easy to fix:
+One more thing that will make a post appear at an odd time. Jekyll reads dates in whatever timezone the build machine thinks it is in, and a GitHub runner thinks it is UTC. So in British Summer Time a post dated today technically becomes eligible at 1am rather than midnight. Not a disaster, but easy to fix:
 
 ```yaml
 timezone: Europe/London
@@ -107,7 +107,8 @@ Once it's in, a post dated ahead goes live on its date with nothing from you. Wr
 
 Two things not to expect:
 
-- **Cron is not punctual.** GitHub runs scheduled jobs when it has capacity, and under load that can be a quarter of an hour late or worse. Fine for a blog, useless if you need something on the hour.
+- **Cron is not remotely punctual.** GitHub runs scheduled jobs when it has spare capacity, and "when it has capacity" turns out to mean a lot later than you asked. Mine is set for 07:00 UTC and the three runs after I switched it on started at 13:49, 13:23 and 14:17. That is six to seven hours late, every time, consistently. Fine for a blog, useless if you need something on the hour. Part of the reason is that I picked a round number: on-the-hour schedules are the busiest, so if you want yours nearer the time you asked for, pick an odd minute like `17 5 * * *` rather than `0 7 * * *`.
+
 - **Scheduled workflows switch themselves off.** Sixty days without activity in the repo and GitHub disables the schedule and emails you about it. Any push turns it back on. If you're pushing regularly you'll never see it, but it's a nasty surprise if you're relying on a queue draining while you're away.
 
 ## In short
