@@ -9,8 +9,14 @@
     {% assign url = url | replace_first: 'http://', '' %}
     {% assign url = url | replace_first: 'spdy://', '' %}
     {% assign url = url | replace_first: '//', '' %}
+    {% comment %}
+      No trailing slash. Google treats the sitesearch value as a literal URL
+      prefix, and nothing on a root-hosted site starts with "host/" and ends
+      there, so a slash here matches zero documents. The theme appends one
+      because it assumes the site may live in a subdirectory.
+    {% endcomment %}
     <input name="sitesearch" type="hidden"
-           value="{{ url }}{{ "/" | relative_url }}" />
+           value="{{ url }}" />
 
     <input type="submit" value="Search" />
   </div>
