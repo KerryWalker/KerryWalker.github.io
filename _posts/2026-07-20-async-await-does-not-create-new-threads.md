@@ -9,7 +9,7 @@ tags:
   - async
 ---
 
-You see that heading a lot when you're trying to work out what async/await actually is in .NET. I've worked with several "senior developers" who still believed all those keywords did was spin up a new thread. The trouble is there aren't many explanations that tie it to something from the real world. Here's mine.
+You see that heading a lot when you're trying to work out what async/await actually is in .NET. I have worked with many developers who still believed all those keywords did was spin up a new thread. The trouble is there aren't many explanations that tie it to something from the real world. Here's mine.
 
 This is the second in a short series about .NET things that are easy to get wrong, explained in plain English.
 

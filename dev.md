@@ -19,6 +19,17 @@ Most developers are already using half the Gang of Four catalogue without knowin
 {% for post in pattern_posts %}  <li><a href="{{ post.url | relative_url }}">{{ post.title }}</a></li>
 {% endfor %}</ol>
 
+{% assign migration_posts = site.posts | where: "pillar", "migration" | sort: "date" %}
+{% if migration_posts.size > 0 %}
+<h2 id="merging-two-systems">Merging two systems</h2>
+
+Two installations of the same product, a decade of separate development, and a decision to run them as one. What that actually takes, in the order the foreign keys make you do it.
+
+<ol>
+{% for post in migration_posts %}  <li><a href="{{ post.url | relative_url }}">{{ post.title }}</a></li>
+{% endfor %}</ol>
+{% endif %}
+
 ## .NET
 
 The things that are easy to get wrong, explained without the computer science.

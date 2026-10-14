@@ -14,7 +14,7 @@ Last time I pulled apart a search chain: six handlers in a line, each one offere
 
 I left something hanging. In a different job, years earlier, I wrote something that looks almost exactly like it. A `SetNext` method. A field holding the next one. Objects wired into a line when the thing starts up.
 
-It is not the same pattern. Working out why took me longer than it should have, and the reasons turn out to be the interesting part.
+It is not the same pattern, and the reasons why turn out to be the interesting part.
 
 ## What it does
 
