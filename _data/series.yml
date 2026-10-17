@@ -3,3 +3,6 @@
 design-patterns:
   name: Design Patterns in Real Code
   url: /dev.html#design-patterns
+data-migration:
+  name: Merging Two Systems
+  url: /dev.html#merging-two-systems
