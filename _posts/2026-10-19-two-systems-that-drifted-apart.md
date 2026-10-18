@@ -32,12 +32,6 @@ That divergence shows up in three different ways, and they get progressively mor
 
 **Tables that only exist in the surviving system.** Less of a problem, because there is nothing to migrate into them, but they still have to be populated with something sensible for every record that arrives, and "sensible" is a business decision rather than a technical one.
 
-## The second of those reshapes the project
-
-That middle case is the one that reshapes the project, and it is worth a post of its own, which is where this goes next.
-
-The short version: if the retiring system has a feature the survivor has never had, there is nowhere to put the data. Not a different shape of somewhere. Nowhere. So before any migration can happen, somebody has to build it, and that is ordinary feature development with a migration-shaped deadline attached.
-
 ## And none of the numbers mean anything
 
 All of that is before the problem you actually expected.
@@ -76,7 +70,7 @@ What we ended up with is not complicated, and it is roughly what anyone doing th
 
 **Be able to run the whole thing again tomorrow.** All of it, unattended, as many times as it takes to stop being frightening.
 
-Each of those is a post of its own, and the series finishes with what went wrong anyway, because something always does and the write-ups that leave that part out are no use to anybody about to do this.
+Each of those is a post of its own, and the series finishes with what went wrong anyway, because something always does.
 
 ## In short
 
