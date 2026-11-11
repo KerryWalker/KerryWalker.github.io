@@ -43,7 +43,7 @@ Content in Markdown...
 - Each section should answer a question the reader already has. If the question hasn't been raised yet, raise it before answering it. (Loosely SCQA: situation, complication, question, answer. But keep the answer late, because the reveal is what makes people read on, so don't lead with it the way a work memo would.)
 - Round numbers in prose ("around 20,000 files"), not exact counts ("19,388 files"). Keep exact values only where precision is the point (prices, config values, measurements).
 - Drafts are flagged with `published: false` in front matter. There is no `_drafts/` folder. Remove the flag (or set `true`) to publish.
-- Posts carry a `pillar:` field that feeds the hub pages and the home page. Home automation: `energy`, `ev`, `dashboards`, `home-assistant` (listed on `home-automation.md`). Dev: `patterns`, `migration`, `dotnet`, `sql`, `jekyll` (listed on `dev.md`). Posts with no pillar appear under "Everything Else" on the home page.
+- Posts carry a `pillar:` field that feeds the hub pages and the home page. Home automation: `energy`, `ev`, `dashboards`, `home-assistant` (listed on `home-automation.md`). Dev: `patterns`, `migration`, `dotnet`, `sql`, `tooling`, `jekyll` (listed on `dev.md`). Posts with no pillar appear under "Everything Else" on the home page.
 
 ## Architecture
 

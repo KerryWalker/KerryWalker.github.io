@@ -2,6 +2,7 @@
 layout: post
 title: Changing Visual Studio Dev Tunnel Access from Private to Public
 excerpt: How to update an existing Dev Tunnel's access level via the CLI without losing your tunnel URL.
+pillar: tooling
 tags:
   - visual-studio
   - dev-tunnels

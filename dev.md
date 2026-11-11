@@ -48,6 +48,15 @@ The ones that look right, run clean, and quietly give you the wrong answer.
 {% for post in sql_posts %}  <li><a href="{{ post.url | relative_url }}">{{ post.title }}</a></li>
 {% endfor %}</ul>
 
+## Tools and workflow
+
+Dev tunnels, WSL, and the small automations that take the friction out of the working day.
+
+{% assign tooling_posts = site.posts | where: "pillar", "tooling" | sort: "date" %}
+<ul>
+{% for post in tooling_posts %}  <li><a href="{{ post.url | relative_url }}">{{ post.title }}</a></li>
+{% endfor %}</ul>
+
 ## Building this site
 
 Jekyll and GitHub Pages bits, mostly written up because I'd forget them otherwise.

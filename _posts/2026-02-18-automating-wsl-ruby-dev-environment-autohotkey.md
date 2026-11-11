@@ -2,6 +2,7 @@
 layout: post
 title: Automating a WSL Ruby Dev Environment with AutoHotKey
 excerpt: How I automated opening four Ubuntu terminal sessions, running the right commands in each, opening VS Code, and launching a browser, all with a single keyboard shortcut.
+pillar: tooling
 tags:
   - autohotkey
   - wsl
