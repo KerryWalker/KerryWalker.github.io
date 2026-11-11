@@ -57,3 +57,56 @@ $heading-color: #90a959;
   font-size: 0.9rem;
   margin: 0.5rem 0;
 }
+
+// Home page
+.home-intro {
+  font-size: 1.15rem;
+  margin-bottom: 2rem;
+}
+
+.home-hub {
+  margin-bottom: 1.75rem;
+
+  h2 {
+    font-size: 1.3rem;
+    margin-bottom: 0.3rem;
+  }
+
+  p {
+    margin: 0;
+  }
+}
+
+.home-latest {
+  margin-top: 2.5rem;
+  padding-top: 1.25rem;
+  border-top: 1px solid #e5e5e5;
+
+  h2 {
+    font-size: 1.2rem;
+    margin-bottom: 0.5rem;
+  }
+
+  ul {
+    list-style: none;
+    padding-left: 0;
+    margin: 0;
+  }
+
+  li {
+    margin: 0.4rem 0;
+  }
+}
+
+.home-latest-date {
+  display: inline-block;
+  min-width: 4rem;
+  color: #767676;
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+}
+
+.home-all-posts {
+  margin-top: 1rem;
+}

@@ -1,0 +1,20 @@
+---
+layout: default
+---
+
+<div class="content home">
+  {{ content }}
+
+  <section class="home-latest">
+    <h2>Latest</h2>
+    <ul>
+    {% for post in site.posts limit: 5 %}
+      <li>
+        <span class="home-latest-date">{{ post.date | date: "%-d %b" }}</span>
+        <a href="{{ post.url | relative_url }}">{{ post.title }}</a>
+      </li>
+    {% endfor %}
+    </ul>
+    <p class="home-all-posts"><a href="{{ "/blog/" | relative_url }}">All posts &rarr;</a></p>
+  </section>
+</div>
