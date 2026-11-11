@@ -2,6 +2,7 @@
 layout: post
 title: A Samotech SM323, two wires, and a setting Hubitat doesn't have
 excerpt: Replacing a dead dimmer on a UK 2-way circuit with only two cores between the switches, and the manufacturer-specific Zigbee attribute you need to write because no Hubitat driver exposes it.
+pillar: home-assistant
 tags:
   - hubitat
   - zigbee

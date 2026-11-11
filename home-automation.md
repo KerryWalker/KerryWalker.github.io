@@ -34,6 +34,15 @@ Building a family dashboard: calendars, and a custom energy gauge done properly.
 {% for post in dashboard_posts %}  <li><a href="{{ post.url | relative_url }}">{{ post.title }}</a></li>
 {% endfor %}</ul>
 
+## Around the house
+
+The rest of it: lighting, music, and the devices that needed more persuading than the box suggested.
+
+{% assign ha_posts = site.posts | where: "pillar", "home-assistant" | sort: "date" %}
+<ul>
+{% for post in ha_posts %}  <li><a href="{{ post.url | relative_url }}">{{ post.title }}</a></li>
+{% endfor %}</ul>
+
 ---
 
 New to Octopus? If you switch using [my referral link](https://share.octopus.energy/lush-cliff-190) you get £50 of credit, and so do I.

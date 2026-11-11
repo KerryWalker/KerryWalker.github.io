@@ -2,6 +2,7 @@
 layout: post
 title: Streaming Plex Music to Sonos from Home Assistant Without Remote Access
 excerpt: I wanted to play music from my NAS to my Sonos speakers, controlled from Home Assistant, all locally. The documented method can't do it. Here's why, and the setup that can.
+pillar: home-assistant
 tags:
   - home-assistant
   - sonos
