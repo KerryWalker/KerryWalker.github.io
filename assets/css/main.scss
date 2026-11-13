@@ -94,17 +94,22 @@ $heading-color: #90a959;
   }
 
   li {
+    display: flex;
+    align-items: baseline;
+    gap: 0.75rem;
     margin: 0.4rem 0;
+  }
+
+  a {
+    flex: 1;
+    min-width: 0;
   }
 }
 
 .home-latest-date {
-  display: inline-block;
-  min-width: 4rem;
-  margin-right: 0.75rem;
+  flex: 0 0 3rem;
   color: #767676;
   font-size: 0.8rem;
-  text-transform: uppercase;
   letter-spacing: 0.03em;
 }
 

@@ -185,4 +185,4 @@ Two tables with the same shape do not need two copies of every query. Give them 
 
 The decision does not go away. It moves to the one place it belongs, and the twenty places that used to make it stop having to. That is the whole of the principle, and most of the time it is all you need before reaching for a named pattern.
 
-Later in the series, the other half of the same story. The code that filtered those events in memory had a different problem, and it was costing more than readability.
+Next time, the other half of the same story. The code that filtered those events in memory had a different problem, and it was costing more than readability.
