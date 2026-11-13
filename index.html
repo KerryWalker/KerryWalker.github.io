@@ -5,6 +5,19 @@ title: Home
 
 <p class="home-intro">Twenty years of software, a house run by Home Assistant, and whatever else seemed worth writing down.</p>
 
+<section class="home-latest">
+  <h2>Latest</h2>
+  <ul>
+  {% for post in site.posts limit: 5 %}
+    <li>
+      <span class="home-latest-date">{{ post.date | date: "%d/%m" }}</span>
+      <a href="{{ post.url | relative_url }}">{{ post.title }}</a>
+    </li>
+  {% endfor %}
+  </ul>
+  <p class="home-all-posts"><a href="{{ "/blog/" | relative_url }}">All posts &rarr;</a></p>
+</section>
+
 <div class="home-hubs">
   <section class="home-hub">
     <h2><a href="{{ "/dev.html" | relative_url }}">Software Development</a></h2>
